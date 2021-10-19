@@ -322,7 +322,7 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD UsuarioModificacion NVARCHAR(100) NULL
 	--Columnas Linaje
 	ALTER TABLE Hecho.OrdenCotizacion ADD ID_Batch UNIQUEIDENTIFIER NULL
-	ALTER TABLE Hecho.OrdenCotizacion ADD ID_SourceSystem VARCHAR(20)	
+	ALTER TABLE Hecho.OrdenCotizacion ADD ID_SourceSystem VARCHAR(50)	
 
 --DimDescuento	
 	ALTER TABLE Dimension.Descuento ADD ID_Descuento [UDT_PK] NOT NULL
@@ -335,7 +335,7 @@ GO
 	ALTER TABLE Dimension.Descuento ADD UsuarioModificacion NVARCHAR(100) NULL
 	--Columnas Linaje
 	ALTER TABLE Dimension.Descuento ADD ID_Batch UNIQUEIDENTIFIER NULL
-	ALTER TABLE Dimension.Descuento ADD ID_SourceSystem VARCHAR(20)	
+	ALTER TABLE Dimension.Descuento ADD ID_SourceSystem VARCHAR(50)	
 
 --DimFecha	
 	ALTER TABLE Dimension.Fecha ADD [Date] DATE NOT NULL
@@ -422,7 +422,7 @@ GO
 	ALTER TABLE Dimension.Vehiculo ADD [Marca] [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Vehiculo ADD [Modelo] [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Vehiculo ADD [SubModelo] [UDT_VarcharCorto]
-	ALTER TABLE Dimension.Vehiculo ADD [Estilo] [UDT_VarcharCorto]
+	ALTER TABLE Dimension.Vehiculo ADD [Estilo] [UDT_VarcharMediano]
 	ALTER TABLE Dimension.Vehiculo ADD [FechaCreacionSource] [UDT_DateTime]  -- SCD Tipo 0
 	--Columnas Auditoria
 	ALTER TABLE Dimension.Vehiculo ADD FechaCreacion DATETIME NOT NULL DEFAULT(GETDATE())
@@ -447,7 +447,7 @@ GO
 	ALTER TABLE Dimension.Aseguradoras ADD ID_SourceSystem VARCHAR(50)
 
 --DimPlantaReparacion
-    ALTER TABLE Dimension.PlantaReparacion ADD [IDPlantaReparacion] [UDT_PK] not null
+    ALTER TABLE Dimension.PlantaReparacion ADD [IDPlantaReparacion] [UDT_PK_VARCHAR] not null
     ALTER TABLE Dimension.PlantaReparacion ADD [CompanyNombre] [UDT_VarcharTiny] not null
     ALTER TABLE Dimension.PlantaReparacion ADD [Ciudad] [UDT_VarcharTiny] not null
 	ALTER TABLE Dimension.PlantaReparacion ADD [Estado] [UDT_VarcharTiny] not null 
