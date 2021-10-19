@@ -15,7 +15,7 @@ begin
 	DROP DATABASE [RepuestosWebDWH]
 	print 'RepuestosWebDWH ha sido eliminada'
 end
-
+GO
 
 CREATE DATABASE RepuestosWebDWH
 GO
@@ -29,8 +29,11 @@ GO
 	CREATE TYPE [UDT_SK] FROM INT
 	GO
 
+	--Tipo para PK INT
+	CREATE TYPE [UDT_PK] FROM INT
+
 	--Tipo para PK varchar
-	CREATE TYPE [UDT_PK] FROM VARCHAR(100)
+	CREATE TYPE [UDT_PK_VARCHAR] FROM VARCHAR(100)
 	GO
 
 --Cadenas
@@ -261,7 +264,7 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD ID_DetalleOrden [UDT_PK]		
     ALTER TABLE Hecho.OrdenCotizacion ADD [NumLinea] [UDT_PK]
     ALTER TABLE Hecho.OrdenCotizacion ADD [VehiculoID] [UDT_PK]
-    ALTER TABLE Hecho.OrdenCotizacion ADD [ID_Parte] [UDT_PK]
+    ALTER TABLE Hecho.OrdenCotizacion ADD [ID_Parte] [UDT_PK_VARCHAR]
     ALTER TABLE Hecho.OrdenCotizacion ADD [IDAseguradora] [UDT_PK]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [IDPlantaReparacion] [UDT_PK]
 	
@@ -358,7 +361,7 @@ GO
     ALTER TABLE Dimension.Fecha ADD IsWeekend BIT NOT NULL	
   
 --DimPartes
-	ALTER TABLE Dimension.Partes ADD ID_Partes [UDT_PK]
+	ALTER TABLE Dimension.Partes ADD ID_Partes [UDT_PK_VARCHAR]
 	ALTER TABLE Dimension.Partes ADD ID_Categoria [UDT_PK]
 	ALTER TABLE Dimension.Partes ADD ID_Linea [UDT_PK]
 	ALTER TABLE Dimension.Partes ADD NombreParte [UDT_VarcharCorto]
@@ -383,7 +386,7 @@ GO
 	ALTER TABLE Dimension.Geografia ADD ID_Region [UDT_PK]
 	ALTER TABLE Dimension.Geografia ADD ID_Pais [UDT_PK]
 	ALTER TABLE Dimension.Geografia ADD NombreCiudad [UDT_VarcharCorto]
-	ALTER TABLE Dimension.Geografia ADD CodigoPostal INT
+	ALTER TABLE Dimension.Geografia ADD CodigoPostal [UDT_VarcharTiny]
 	ALTER TABLE Dimension.Geografia ADD NombreRegion [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Geografia ADD NombrePais [UDT_VarcharCorto]
 	--Columnas Auditoria
@@ -477,16 +480,3 @@ GO
 	--Columnas Linaje	  
 	ALTER TABLE Dimension.StatusOrden ADD ID_Batch UNIQUEIDENTIFIER NULL
 	ALTER TABLE Dimension.StatusOrden ADD ID_SourceSystem VARCHAR(50)
-
-
---------------------------------------------------------------------------------------------
------------------------CORRER CREATE de USP_FillDimDate PRIMERO!!!--------------------------
------------------------------------------------------------------------------------------------------------------
-
-	DECLARE @FechaMaxima DATETIME=DATEADD(YEAR,2,GETDATE())
-	--Fecha
-	IF ISNULL((SELECT MAX(Date) FROM Dimension.Fecha),'1900-01-01')<@FechaMaxima
-	begin
-		EXEC USP_FillDimDate @CurrentDate = '2016-01-01', 
-							 @EndDate     = @FechaMaxima
-	end
