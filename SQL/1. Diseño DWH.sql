@@ -15,7 +15,7 @@ begin
 	DROP DATABASE [RepuestosWebDWH]
 	print 'RepuestosWebDWH ha sido eliminada'
 end
-
+GO
 
 CREATE DATABASE RepuestosWebDWH
 GO
@@ -29,8 +29,11 @@ GO
 	CREATE TYPE [UDT_SK] FROM INT
 	GO
 
+	--Tipo para PK INT
+	CREATE TYPE [UDT_PK] FROM INT
+
 	--Tipo para PK varchar
-	CREATE TYPE [UDT_PK] FROM VARCHAR(100)
+	CREATE TYPE [UDT_PK_VARCHAR] FROM VARCHAR(100)
 	GO
 
 --Cadenas
@@ -46,7 +49,7 @@ GO
 	CREATE TYPE [UDT_VarcharCorto] FROM VARCHAR(100)
 	GO
 
-	--Tipo para cadenas más cortas
+	--Tipo para cadenas mï¿½s cortas
 	CREATE TYPE [UDT_VarcharTiny] FROM VARCHAR(50)
 	GO
 
@@ -159,7 +162,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Partes provee una vista desnormalizada de las tablas origen Partes, Linea y Categoria, dejando todo en una única dimensión para un modelo estrella', 
+     @value = N'La dimension Partes provee una vista desnormalizada de las tablas origen Partes, Linea y Categoria, dejando todo en una ï¿½nica dimensiï¿½n para un modelo estrella', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -168,7 +171,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Geografia provee una vista desnormalizada de las tablas origen País, Region y Ciudad en una sola dimensión para un modelo estrella', 
+     @value = N'La dimension Geografia provee una vista desnormalizada de las tablas origen Paï¿½s, Region y Ciudad en una sola dimensiï¿½n para un modelo estrella', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -177,7 +180,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Clientes posee toda la información de la tabla de origen Clientes', 
+     @value = N'La dimension Clientes posee toda la informaciï¿½n de la tabla de origen Clientes', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -186,7 +189,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Vehiculo posee toda la información de la tabla de origen Vehiculo', 
+     @value = N'La dimension Vehiculo posee toda la informaciï¿½n de la tabla de origen Vehiculo', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -195,7 +198,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Descuento posee toda la información de la tabla de origen Descuento', 
+     @value = N'La dimension Descuento posee toda la informaciï¿½n de la tabla de origen Descuento', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -204,7 +207,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension StatusOrden posee toda la información de la tabla de origen StatusOrden', 
+     @value = N'La dimension StatusOrden posee toda la informaciï¿½n de la tabla de origen StatusOrden', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -213,7 +216,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension Aseguradoras posee toda la información de la tabla de origen Aseguradoras', 
+     @value = N'La dimension Aseguradoras posee toda la informaciï¿½n de la tabla de origen Aseguradoras', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -222,7 +225,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La dimension PlantaReparación posee toda la información de la tabla de origen PlantaReparación', 
+     @value = N'La dimension PlantaReparaciï¿½n posee toda la informaciï¿½n de la tabla de origen PlantaReparaciï¿½n', 
      @level0type = N'SCHEMA', 
      @level0name = N'Dimension', 
      @level1type = N'TABLE', 
@@ -240,7 +243,7 @@ GO
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La tabla de hechos es una union proveniente de las tablas de Orden, Detalle_Orden, Cotización y CotizaciónDetalle', 
+     @value = N'La tabla de hechos es una union proveniente de las tablas de Orden, Detalle_Orden, Cotizaciï¿½n y Cotizaciï¿½nDetalle', 
      @level0type = N'SCHEMA', 
      @level0name = N'Hecho', 
      @level1type = N'TABLE', 
@@ -250,7 +253,7 @@ GO
 --------------------------------------------------------------------------------------------
 ---------------------------------MODELADO LOGICO--------------------------------------------
 --------------------------------------------------------------------------------------------
---Transformación en modelo lógico (mas detalles)
+--Transformaciï¿½n en modelo lï¿½gico (mas detalles)
 
 --Hechos
 	ALTER TABLE Hecho.OrdenCotizacion ADD ID_Orden [UDT_PK]
@@ -258,10 +261,11 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD ID_Ciudad [UDT_PK]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [IDCotizacion] [UDT_PK]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [ID_StatusOrden] [UDT_PK]
-	ALTER TABLE Hecho.OrdenCotizacion ADD ID_DetalleOrden [UDT_PK]		
+	ALTER TABLE Hecho.OrdenCotizacion ADD ID_DetalleOrden [UDT_PK]	
+	ALTER TABLE Hecho.OrdenCotizacion ADD ID_Descuento [UDT_PK]		
     ALTER TABLE Hecho.OrdenCotizacion ADD [NumLinea] [UDT_PK]
     ALTER TABLE Hecho.OrdenCotizacion ADD [VehiculoID] [UDT_PK]
-    ALTER TABLE Hecho.OrdenCotizacion ADD [ID_Parte] [UDT_PK]
+    ALTER TABLE Hecho.OrdenCotizacion ADD [ID_Parte] [UDT_PK_VARCHAR]
     ALTER TABLE Hecho.OrdenCotizacion ADD [IDAseguradora] [UDT_PK]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [IDPlantaReparacion] [UDT_PK]
 	
@@ -270,12 +274,12 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD [IDRecotizacion] [UDT_VarcharCorto]
 	
 	ALTER TABLE Hecho.OrdenCotizacion ADD Total_Orden [UDT_Decimal12.2]
-	ALTER TABLE Hecho.OrdenCotizacion ADD Fecha_Orden [UDT_DateTime] --SCD Tipo 0
+	ALTER TABLE Hecho.OrdenCotizacion ADD Fecha_Orden [UDT_DateTime]
 	ALTER TABLE Hecho.OrdenCotizacion ADD NumeroOrden [UDT_VarcharTiny]
 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [status] [UDT_VarcharTiny] 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [TipoDocumento] [UDT_VarcharTiny] 
-	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCreacionCotizacion] [UDT_DateTime]  --SCD Tipo 0
+	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCreacionCotizacion] [UDT_DateTime]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [ProcesadoPor] [UDT_VarcharTiny] 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [AseguradoraSubsidiaria] [UDT_VarcharCorto] 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [NumeroReclamo] [UDT_VarcharTiny] 
@@ -289,15 +293,15 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD [CodigoPostal_Cotizacion]  [UDT_VarcharTiny]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [LeidoPorPlantaReparacion] [UDT_Bit]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [LeidoPorPlantaReparacionFecha] [UDT_DateTime]
-	ALTER TABLE Hecho.OrdenCotizacion ADD [CotizacionReabierta] [UDT_Bit] --SCD Tipo 2
-	ALTER TABLE Hecho.OrdenCotizacion ADD [EsAseguradora] [UDT_Bit] --SCD Tipo 0
-	ALTER TABLE Hecho.OrdenCotizacion ADD [CodigoVerificacion] [UDT_VarcharTiny] --SCD Tipo 0
-	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCreacionRegistro_Cotizacion] [UDT_DateTime] --SCD Tipo 0
+	ALTER TABLE Hecho.OrdenCotizacion ADD [CotizacionReabierta] [UDT_Bit] 
+	ALTER TABLE Hecho.OrdenCotizacion ADD [EsAseguradora] [UDT_Bit]
+	ALTER TABLE Hecho.OrdenCotizacion ADD [CodigoVerificacion] [UDT_VarcharTiny] 
+	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCreacionRegistro_Cotizacion] [UDT_DateTime] 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [PartnerConfirmado] [UDT_Bit] 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [WrittenBy] [UDT_VarcharCorto]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [SeguroValidado] [UDT_Bit] 
-	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCaptura] [UDT_DateTime] --SCD Tipo 0
-	ALTER TABLE Hecho.OrdenCotizacion ADD [IDOrden] INT --SCD Tipo 0
+	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaCaptura] [UDT_DateTime] 
+	ALTER TABLE Hecho.OrdenCotizacion ADD [IDOrden] INT 
 	ALTER TABLE Hecho.OrdenCotizacion ADD [Ruta] [UDT_VarcharLargo]
 	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaLimiteRuta] [UDT_DateTime]
 
@@ -305,13 +309,12 @@ GO
     ALTER TABLE Hecho.OrdenCotizacion ADD [AltPartNum] [UDT_VarcharTiny]
     ALTER TABLE Hecho.OrdenCotizacion ADD [AltTipoParte] [UDT_VarcharTiny]
     ALTER TABLE Hecho.OrdenCotizacion ADD [ciecaTipoParte] [UDT_VarcharTiny]
-    ALTER TABLE Hecho.OrdenCotizacion ADD [Cantidad] INT    --SCD Tipo 2
+    ALTER TABLE Hecho.OrdenCotizacion ADD [Cantidad] INT  
     ALTER TABLE Hecho.OrdenCotizacion ADD [PrecioListaOnRO] [UDT_VarcharTiny]
     ALTER TABLE Hecho.OrdenCotizacion ADD [PrecioNetoOnRO] [UDT_VarcharTiny]
-    ALTER TABLE Hecho.OrdenCotizacion ADD [NecesitadoParaFecha] [UDT_DateTime]  --SCD Tipo 2
-	--Columnas SCD Tipo 2
-	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaInicioValidez] DATETIME NOT NULL DEFAULT(GETDATE())
-	ALTER TABLE Hecho.OrdenCotizacion ADD [FechaFinValidez] DATETIME NULL
+    ALTER TABLE Hecho.OrdenCotizacion ADD [NecesitadoParaFecha] [UDT_DateTime] 
+
+	ALTER TABLE Hecho.OrdenCotizacion ADD [OrigenOrden] [UDT_VarcharTiny] 
 	--Columnas Auditoria
 	ALTER TABLE Hecho.OrdenCotizacion ADD FechaCreacion DATETIME NULL DEFAULT(GETDATE())
 	ALTER TABLE Hecho.OrdenCotizacion ADD UsuarioCreacion NVARCHAR(100) NULL DEFAULT(SUSER_NAME())
@@ -319,7 +322,7 @@ GO
 	ALTER TABLE Hecho.OrdenCotizacion ADD UsuarioModificacion NVARCHAR(100) NULL
 	--Columnas Linaje
 	ALTER TABLE Hecho.OrdenCotizacion ADD ID_Batch UNIQUEIDENTIFIER NULL
-	ALTER TABLE Hecho.OrdenCotizacion ADD ID_SourceSystem VARCHAR(20)	
+	ALTER TABLE Hecho.OrdenCotizacion ADD ID_SourceSystem VARCHAR(50)	
 
 --DimDescuento	
 	ALTER TABLE Dimension.Descuento ADD ID_Descuento [UDT_PK] NOT NULL
@@ -332,7 +335,7 @@ GO
 	ALTER TABLE Dimension.Descuento ADD UsuarioModificacion NVARCHAR(100) NULL
 	--Columnas Linaje
 	ALTER TABLE Dimension.Descuento ADD ID_Batch UNIQUEIDENTIFIER NULL
-	ALTER TABLE Dimension.Descuento ADD ID_SourceSystem VARCHAR(20)	
+	ALTER TABLE Dimension.Descuento ADD ID_SourceSystem VARCHAR(50)	
 
 --DimFecha	
 	ALTER TABLE Dimension.Fecha ADD [Date] DATE NOT NULL
@@ -358,7 +361,7 @@ GO
     ALTER TABLE Dimension.Fecha ADD IsWeekend BIT NOT NULL	
   
 --DimPartes
-	ALTER TABLE Dimension.Partes ADD ID_Partes [UDT_PK]
+	ALTER TABLE Dimension.Partes ADD ID_Partes [UDT_PK_VARCHAR]
 	ALTER TABLE Dimension.Partes ADD ID_Categoria [UDT_PK]
 	ALTER TABLE Dimension.Partes ADD ID_Linea [UDT_PK]
 	ALTER TABLE Dimension.Partes ADD NombreParte [UDT_VarcharCorto]
@@ -383,7 +386,7 @@ GO
 	ALTER TABLE Dimension.Geografia ADD ID_Region [UDT_PK]
 	ALTER TABLE Dimension.Geografia ADD ID_Pais [UDT_PK]
 	ALTER TABLE Dimension.Geografia ADD NombreCiudad [UDT_VarcharCorto]
-	ALTER TABLE Dimension.Geografia ADD CodigoPostal INT
+	ALTER TABLE Dimension.Geografia ADD CodigoPostal [UDT_VarcharTiny]
 	ALTER TABLE Dimension.Geografia ADD NombreRegion [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Geografia ADD NombrePais [UDT_VarcharCorto]
 	--Columnas Auditoria
@@ -419,7 +422,7 @@ GO
 	ALTER TABLE Dimension.Vehiculo ADD [Marca] [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Vehiculo ADD [Modelo] [UDT_VarcharCorto]
 	ALTER TABLE Dimension.Vehiculo ADD [SubModelo] [UDT_VarcharCorto]
-	ALTER TABLE Dimension.Vehiculo ADD [Estilo] [UDT_VarcharCorto]
+	ALTER TABLE Dimension.Vehiculo ADD [Estilo] [UDT_VarcharMediano]
 	ALTER TABLE Dimension.Vehiculo ADD [FechaCreacionSource] [UDT_DateTime]  -- SCD Tipo 0
 	--Columnas Auditoria
 	ALTER TABLE Dimension.Vehiculo ADD FechaCreacion DATETIME NOT NULL DEFAULT(GETDATE())
@@ -444,7 +447,7 @@ GO
 	ALTER TABLE Dimension.Aseguradoras ADD ID_SourceSystem VARCHAR(50)
 
 --DimPlantaReparacion
-    ALTER TABLE Dimension.PlantaReparacion ADD [IDPlantaReparacion] [UDT_PK] not null
+    ALTER TABLE Dimension.PlantaReparacion ADD [IDPlantaReparacion] [UDT_PK_VARCHAR] not null
     ALTER TABLE Dimension.PlantaReparacion ADD [CompanyNombre] [UDT_VarcharTiny] not null
     ALTER TABLE Dimension.PlantaReparacion ADD [Ciudad] [UDT_VarcharTiny] not null
 	ALTER TABLE Dimension.PlantaReparacion ADD [Estado] [UDT_VarcharTiny] not null 
@@ -477,16 +480,3 @@ GO
 	--Columnas Linaje	  
 	ALTER TABLE Dimension.StatusOrden ADD ID_Batch UNIQUEIDENTIFIER NULL
 	ALTER TABLE Dimension.StatusOrden ADD ID_SourceSystem VARCHAR(50)
-
-
---------------------------------------------------------------------------------------------
------------------------CORRER CREATE de USP_FillDimDate PRIMERO!!!--------------------------
------------------------------------------------------------------------------------------------------------------
-
-	DECLARE @FechaMaxima DATETIME=DATEADD(YEAR,2,GETDATE())
-	--Fecha
-	IF ISNULL((SELECT MAX(Date) FROM Dimension.Fecha),'1900-01-01')<@FechaMaxima
-	begin
-		EXEC USP_FillDimDate @CurrentDate = '2016-01-01', 
-							 @EndDate     = @FechaMaxima
-	end
