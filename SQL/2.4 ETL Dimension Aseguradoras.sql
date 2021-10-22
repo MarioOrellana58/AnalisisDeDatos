@@ -9,3 +9,10 @@ SELECT [IDAseguradora]
 	  ,CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion
 
   FROM [RepuestosWeb].[dbo].[Aseguradoras]
+
+--Aseguradoras
+CREATE INDEX [IndiceAseguradoras] on [Aseguradoras] ( [IDAseguradora] ) include (
+        [NombreAseguradora]
+	   ,[Activa])
+
+update statistics Aseguradoras with fullscan

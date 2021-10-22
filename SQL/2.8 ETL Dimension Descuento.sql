@@ -7,3 +7,11 @@ SELECT [ID_Descuento]
 	  ,GETDATE() AS FechaModificacion
 	  ,CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion
   FROM [RepuestosWeb].[dbo].[Descuento]
+
+
+CREATE INDEX [IndiceDescuento] ON [Descuento] ( [ID_Descuento] ) INCLUDE ( 
+	[NombreDescuento]
+    ,[PorcentajeDescuento] )
+
+
+UPDATE STATISTICS [Descuento] WITH FULLSCAN

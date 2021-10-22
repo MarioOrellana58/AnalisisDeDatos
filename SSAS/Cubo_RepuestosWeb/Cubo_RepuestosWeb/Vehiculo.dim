@@ -1,0 +1,361 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3da50b78-dd4c-4d90-95d8-dbead250e95f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Vehiculo</ID>
+  <Name>Vehiculo</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3062" scrolltop="-5953" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10186" y="16907" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Vehiculo" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4022" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b60f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dimension_Vehiculo" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3062</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5953</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="119">
+            <Shape Id="SK Vehiculo" Expanded="true">
+              <Attributes>
+                <Attribute Id="SK Vehiculo" />
+                <Attribute Id="Estilo" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Sub Modelo" Expanded="false">
+              <Attributes>
+                <Attribute Id="Sub Modelo" />
+              </Attributes>
+              <Position x="173" y="20" />
+            </Shape>
+            <Shape Id="Modelo" Expanded="false">
+              <Attributes>
+                <Attribute Id="Modelo" />
+              </Attributes>
+              <Position x="327" y="20" />
+            </Shape>
+            <Shape Id="Marca" Expanded="false">
+              <Attributes>
+                <Attribute Id="Marca" />
+              </Attributes>
+              <Position x="481" y="20" />
+            </Shape>
+            <Shape Id="Anio" Expanded="true">
+              <Attributes>
+                <Attribute Id="Anio" />
+              </Attributes>
+              <Position x="635" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c4939cc9-274d-4de3-89a6-12344058bf88">
+    <DataSourceViewID>Repuestos Web DWH</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="b8ec1963-908a-4555-a168-358356a35aeb">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="6360d1a6-cb07-4d26-b32c-2648db4f11fc">
+      <ID>SK Vehiculo</ID>
+      <Name>SK Vehiculo</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="61463f13-a1fb-4f02-af7c-73fb60ac3d73">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e00bf2d8-461e-4d64-ab4c-f5ebc2b1e5dd">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>SK_Vehiculo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="43eb5254-18ac-4997-a972-7d24992d5de1">
+          <AttributeID>Sub Modelo</AttributeID>
+          <Name>Sub Modelo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bad155a1-2748-4307-a094-18f6c398c2a3">
+          <AttributeID>Estilo</AttributeID>
+          <Name>Estilo</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="61d6e558-a811-4060-a5da-9cb20f385add">
+      <ID>Anio</ID>
+      <Name>Anio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f92823b7-857e-48b1-9f61-33c16f806106">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9150f713-d7be-4976-a7e1-5ddbd98c6245">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9bec4060-9924-4d6d-a15f-58ad9445c0f1">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="322b35f7-2af6-4231-9014-4994cf533ba8">
+          <TableID>Dimension_Vehiculo</TableID>
+          <ColumnID>Anio</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9e258f24-37a5-4dbe-916c-edfecd12650d">
+      <ID>Marca</ID>
+      <Name>Marca</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ee8f2b79-0c60-41f1-9a52-06c628d508a9">
+          <DataType>WChar</DataType>
+          <DataSize>24</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d79936d0-3129-49ff-a970-b964bdb8096d">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Marca</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="5071873a-1466-4dec-b35e-d4a76bb257f5">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f35ec2e-56be-4871-8f62-bd45c39459cc">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0764046d-be99-4c57-8c43-c0d8f554123a">
+        <DataType>WChar</DataType>
+        <DataSize>24</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9f222d77-17b3-4ca3-8754-1961d18cd3f6">
+          <TableID>Dimension_Vehiculo</TableID>
+          <ColumnID>Marca</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="1f66ac35-99d2-4bd7-9357-648bd29b5d53">
+          <AttributeID>Anio</AttributeID>
+          <Name>Anio</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="931f4544-c357-404a-ad4d-006d3923bba1">
+      <ID>Modelo</ID>
+      <Name>Modelo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6a442e83-f7f0-4970-af48-3634da4c25f7">
+          <DataType>WChar</DataType>
+          <DataSize>32</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="293e5206-eb1d-4f7a-b4e3-e31af49d9af0">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Modelo</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="33b77346-b29c-430b-b6d6-8315ae5fba76">
+          <DataType>WChar</DataType>
+          <DataSize>24</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="29eef8f2-2e1b-4670-b7c1-dc9f9967c304">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Marca</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="7f69ffb1-973f-45f9-b606-2682f8b65bb6">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dc976828-cd87-485f-a8c3-db2c8fc9a0bb">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="104e8bab-0b6b-4820-be7c-43cf77cf4146">
+        <DataType>WChar</DataType>
+        <DataSize>32</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="51239e2c-f93c-4a55-bbe6-2a45d9afc9e0">
+          <TableID>Dimension_Vehiculo</TableID>
+          <ColumnID>Modelo</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="d2e8130d-b8e0-4cba-99c0-cd8e2a510453">
+          <AttributeID>Marca</AttributeID>
+          <Name>Marca</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c5bbf55b-62ce-4dfc-9408-72816e060d3b">
+      <ID>Sub Modelo</ID>
+      <Name>Sub Modelo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="91d540a5-9e3b-4166-9c11-e9d470faf4f9">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="35fc7dc7-8dbd-4044-831c-aaf98c9ef55f">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="b867369f-02a4-498e-a1f6-a1b816556ab5">
+          <DataType>WChar</DataType>
+          <DataSize>24</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9fc2686d-b61d-48b2-bba4-b67f912db39b">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Marca</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="9a17b35e-22f0-4835-a645-b3146f66bbef">
+          <DataType>WChar</DataType>
+          <DataSize>32</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="edc8429c-4e04-4513-a208-7ce26850704c">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Modelo</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="4262098d-2e0e-45db-8576-7410054a9890">
+          <DataType>WChar</DataType>
+          <DataSize>48</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3da1f7eb-57b5-44db-a9ea-af87a8128abf">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>SubModelo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="2640ae11-8a2d-4dc8-85e0-4c4cbc7681ae">
+        <DataType>WChar</DataType>
+        <DataSize>48</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ec2a8665-743b-4576-9faf-e51b22333936">
+          <TableID>Dimension_Vehiculo</TableID>
+          <ColumnID>SubModelo</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b91feda0-feeb-4319-89ad-88e4b68724d8">
+          <AttributeID>Modelo</AttributeID>
+          <Name>Modelo</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d30097e-d46c-47bf-8f25-f76ec20c78f2">
+      <ID>Estilo</ID>
+      <Name>Estilo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6eaa2061-4b18-459b-80f0-9c4b99ca1cdf">
+          <DataType>WChar</DataType>
+          <DataSize>128</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b7c82406-4800-42f6-8518-a56dae13c4ce">
+            <TableID>Dimension_Vehiculo</TableID>
+            <ColumnID>Estilo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6fccfc10-32e3-493e-9b1f-9317961de0d1">
+        <DataType>WChar</DataType>
+        <DataSize>128</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f7af404d-f2da-426b-83fd-9530c8620032">
+          <TableID>Dimension_Vehiculo</TableID>
+          <ColumnID>Estilo</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="1795c827-15d7-414c-b95a-31ab6a7044fc">
+      <ID>Hierarchy</ID>
+      <Name>Jerarquia Vehiculo</Name>
+      <Levels>
+        <Level dwd:design-time-name="de3bb3dd-bf59-4692-87cc-93093eaa4699">
+          <ID>Anio</ID>
+          <Name>Anio</Name>
+          <SourceAttributeID>Anio</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="69bb0211-8ef8-46ff-9eb4-b5398a9e88ed">
+          <ID>Marca</ID>
+          <Name>Marca</Name>
+          <SourceAttributeID>Marca</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="703dae63-ba61-48a2-a692-f8d8c85585bf">
+          <ID>Modelo</ID>
+          <Name>Modelo</Name>
+          <SourceAttributeID>Modelo</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="ba7337e2-9b7c-49a3-bb94-55ee1e18aba9">
+          <ID>Sub Modelo</ID>
+          <Name>Sub Modelo</Name>
+          <SourceAttributeID>Sub Modelo</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

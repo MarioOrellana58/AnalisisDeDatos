@@ -11,8 +11,8 @@
   DTS:LocaleID="4106"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{7E81FEF7-8958-4812-88AE-76F9581B1B72}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{F8804144-866A-4FD5-A772-9486D0D2D9F1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -112,6 +112,23 @@
                 SQLTask:ResultName="0"
                 SQLTask:DtsVariableName="User::vFechaEjecucion" />
             </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Calcular Total Cotizacion"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{90E27B16-BC6D-41D8-B211-DAD587A3AEA5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Calcular Total Cotizacion"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{61F9A04E-45FF-402C-98D0-2CC8AE4A45B7}"
+              SQLTask:SqlStatementSource="UPDATE staging.OrdenCotizacion&#xA;SET TotalCotizacion = (&#xA;&#x9;SELECT OC.CantidadCotizacion * P.Precio &#xA;&#x9;&#x9;FROM staging.OrdenCotizacion OC&#xA;&#x9;&#x9;&#x9;INNER JOIN Dimension.Partes P ON (OC.ID_Parte_Cotizacion = P.ID_Parte)&#xA;)&#xA;WHERE IDCotizacion IS NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -244,20 +261,6 @@
                           cachedName="NumLinea"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[NumLinea]"
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[NumLinea]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[VehiculoID]"
-                          cachedDataType="i4"
-                          cachedName="VehiculoID"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[ID_Parte]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_Parte"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[IDAseguradora]"
                           cachedDataType="i4"
@@ -485,12 +488,6 @@
                           externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[FechaCaptura]"
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[FechaCaptura]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[IDOrden]"
-                          cachedDataType="i4"
-                          cachedName="IDOrden"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[IDOrden]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[IDOrden]" />
-                        <inputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[Ruta]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -539,12 +536,6 @@
                           externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ciecaTipoParte]"
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ciecaTipoParte]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[Cantidad]"
-                          cachedDataType="i4"
-                          cachedName="Cantidad"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cantidad]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[Cantidad]" />
-                        <inputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[PrecioListaOnRO]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -572,6 +563,46 @@
                           cachedName="ID_Descuento"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Descuento]"
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Descuento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[VehiculoID_Cotizacion]"
+                          cachedDataType="i4"
+                          cachedName="VehiculoID_Cotizacion"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID_Cotizacion]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Cotizacion]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[VehiculoID_Orden]"
+                          cachedDataType="i4"
+                          cachedName="VehiculoID_Orden"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID_Orden]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Orden]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[ID_Parte_Cotizacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID_Parte_Cotizacion"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte_Cotizacion]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Cotizacion]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[ID_Parte_Orden]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID_Parte_Orden"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte_Orden]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Orden]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[CantidadOrden]"
+                          cachedDataType="i4"
+                          cachedName="CantidadOrden"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CantidadOrden]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadOrden]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].Columns[CantidadCotizacion]"
+                          cachedDataType="i4"
+                          cachedName="CantidadCotizacion"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CantidadCotizacion]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadCotizacion]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -601,25 +632,19 @@
                           name="ID_DetalleOrden" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[NumLinea]"
-                          dataType="i4"
-                          name="NumLinea" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID]"
-                          dataType="i4"
-                          name="VehiculoID" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
-                          name="ID_Parte" />
+                          length="50"
+                          name="NumLinea" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[IDAseguradora]"
                           dataType="i4"
                           name="IDAseguradora" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[IDPlantaReparacion]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="IDPlantaReparacion" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[IDPartner]"
@@ -653,7 +678,7 @@
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[NumeroOrden]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="20"
                           name="NumeroOrden" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[status]"
@@ -681,7 +706,7 @@
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AseguradoraSubsidiaria]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="80"
                           name="AseguradoraSubsidiaria" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[NumeroReclamo]"
@@ -727,7 +752,7 @@
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CodigoPostal_Cotizacion]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="CodigoPostal_Cotizacion" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[LeidoPorPlantaReparacion]"
@@ -763,7 +788,7 @@
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[WrittenBy]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="80"
                           name="WrittenBy" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[SeguroValidado]"
@@ -774,14 +799,10 @@
                           dataType="dbTimeStamp"
                           name="FechaCaptura" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[IDOrden]"
-                          dataType="i4"
-                          name="IDOrden" />
-                        <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ruta]"
                           codePage="1252"
                           dataType="str"
-                          length="600"
+                          length="500"
                           name="Ruta" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[FechaLimiteRuta]"
@@ -791,41 +812,37 @@
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[OETipoParte]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="OETipoParte" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AltPartNum]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="45"
                           name="AltPartNum" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[AltTipoParte]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="45"
                           name="AltTipoParte" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ciecaTipoParte]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="45"
                           name="ciecaTipoParte" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cantidad]"
-                          dataType="i4"
-                          name="Cantidad" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[PrecioListaOnRO]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="PrecioListaOnRO" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[PrecioNetoOnRO]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="PrecioNetoOnRO" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[NecesitadoParaFecha]"
@@ -841,6 +858,40 @@
                           dataType="str"
                           length="50"
                           name="OrigenOrden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID_Cotizacion]"
+                          dataType="i4"
+                          name="VehiculoID_Cotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[VehiculoID_Orden]"
+                          dataType="i4"
+                          name="VehiculoID_Orden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte_Cotizacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte_Cotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Parte_Orden]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte_Orden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CantidadOrden]"
+                          dataType="i4"
+                          name="CantidadOrden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[CantidadCotizacion]"
+                          dataType="i4"
+                          name="CantidadCotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Destino staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TotalCotizacion]"
+                          dataType="numeric"
+                          name="TotalCotizacion"
+                          precision="24"
+                          scale="2" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -894,16 +945,18 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DO.[ID_Orden] AS [ID_Orden]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT O.[ID_Orden] AS [ID_Orden]
 	  ,O.[ID_Cliente] AS [ID_Cliente]
       ,O.[ID_Ciudad] AS [ID_Ciudad]
       ,C.[IDCotizacion] AS [IDCotizacion]
       ,O.[ID_StatusOrden] AS [ID_StatusOrden]
-	  ,DO.ID_Descuento AS [ID_Descuento]
       ,DO.[ID_DetalleOrden] AS [ID_DetalleOrden]
+	  ,DO.ID_Descuento AS [ID_Descuento]
 	  ,CD.[NumLinea] AS [NumLinea]
-      ,DO.[VehiculoID] AS [VehiculoID]
-      ,DO.[ID_Parte] AS [ID_Parte]
+      ,CD.[VehiculoID] AS [VehiculoID_Cotizacion]
+      ,DO.[VehiculoID] AS [VehiculoID_Orden]
+      ,CD.[ID_Parte] AS [ID_Parte_Cotizacion]
+      ,DO.[ID_Parte] AS [ID_Parte_Orden]
       ,C.[IDAseguradora] AS [IDAseguradora]
       ,C.[IDPlantaReparacion] AS [IDPlantaReparacion]
       ,C.[IDPartner] AS [IDPartner]
@@ -936,24 +989,24 @@
       ,C.[WrittenBy] AS [WrittenBy]
       ,C.[SeguroValidado] AS [SeguroValidado]
       ,C.[FechaCaptura] AS [FechaCaptura]
-      ,C.[IDOrden] AS [IDOrden]
       ,C.[Ruta] AS [Ruta]
       ,C.[FechaLimiteRuta] AS [FechaLimiteRuta]
       ,CD.[OETipoParte] AS [OETipoParte]
       ,CD.[AltPartNum] AS [AltPartNum]
       ,CD.[AltTipoParte] AS [AltTipoParte]
       ,CD.[ciecaTipoParte] AS [ciecaTipoParte]
-      ,CD.[Cantidad] AS [Cantidad]
+      ,CD.[Cantidad] AS [CantidadCotizacion]
+      ,DO.[Cantidad] AS [CantidadOrden]
       ,CD.[PrecioListaOnRO] AS [PrecioListaOnRO]
       ,CD.[PrecioNetoOnRO] AS [PrecioNetoOnRO]
       ,CD.[NecesitadoParaFecha] AS [NecesitadoParaFecha]
 FROM  RepuestosWeb.DBO.Orden O
-	FULL OUTER JOIN RepuestosWeb.DBO.Detalle_orden DO ON (O.ID_Orden = DO.ID_Orden)
+	LEFT OUTER JOIN RepuestosWeb.DBO.Detalle_orden DO ON (O.ID_Orden = DO.ID_Orden)
 	FULL OUTER JOIN RepuestosWeb.DBO.Cotizacion C ON (O.ID_Orden = C.IDOrden)
-	FULL OUTER JOIN RepuestosWeb.DBO.CotizacionDetalle CD ON (C.IDCotizacion = CD.IDCotizacion)  
+	LEFT OUTER JOIN RepuestosWeb.DBO.CotizacionDetalle CD ON (C.IDCotizacion = CD.IDCotizacion)  
 WHERE ((O.Fecha_Orden&gt;?) 
+		OR (O.FechaModificacionSource&gt;?) 
 		OR (C.FechaCreacionRegistro&gt;?) 
-		OR (O.FechaModificacion&gt;?) 
 		OR (C.FechaModificacion&gt;?))</property>
                     <property
                       dataType="System.String"
@@ -975,7 +1028,7 @@ WHERE ((O.Fecha_Orden&gt;?)
                     <property
                       dataType="System.String"
                       description="Asignaciones entre los parámetros del comando SQL y las variables."
-                      name="ParameterMapping">"Parámetro0:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parámetro1:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parámetro2:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parámetro3:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};</property>
+                      name="ParameterMapping">"Parámetro0:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parámetro1:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parámetro2:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};"Parameter3:Input",{4B263C2F-F1DF-45DB-85B0-6D15248C986B};</property>
                   </properties>
                   <connections>
                     <connection
@@ -1054,26 +1107,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           length="50"
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[NumLinea]"
                           name="NumLinea"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID]"
-                          name="VehiculoID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte]"
-                          length="50"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte]"
-                          name="ID_Parte"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[IDAseguradora]"
@@ -1398,15 +1431,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           name="FechaCaptura"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[IDOrden]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[IDOrden]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[IDOrden]"
-                          name="IDOrden"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[Ruta]"
                           codePage="1252"
                           dataType="str"
@@ -1473,15 +1497,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           name="ciecaTipoParte"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[Cantidad]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[Cantidad]"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[Cantidad]"
-                          name="Cantidad"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[PrecioListaOnRO]"
                           codePage="1252"
                           dataType="str"
@@ -1521,6 +1536,64 @@ WHERE ((O.Fecha_Orden&gt;?)
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Descuento]"
                           name="ID_Descuento"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Cotizacion]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID_Cotizacion]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Cotizacion]"
+                          name="VehiculoID_Cotizacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Orden]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID_Orden]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[VehiculoID_Orden]"
+                          name="VehiculoID_Orden"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Cotizacion]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte_Cotizacion]"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Cotizacion]"
+                          name="ID_Parte_Cotizacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Orden]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte_Orden]"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[ID_Parte_Orden]"
+                          name="ID_Parte_Orden"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadCotizacion]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[CantidadCotizacion]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadCotizacion]"
+                          name="CantidadCotizacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadOrden]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[CantidadOrden]"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].Columns[CantidadOrden]"
+                          name="CantidadOrden"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1554,16 +1627,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           dataType="str"
                           length="50"
                           name="NumLinea" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID]"
-                          dataType="i4"
-                          name="VehiculoID" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_Parte" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[IDAseguradora]"
                           dataType="i4"
@@ -1727,10 +1790,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           dataType="dbTimeStamp"
                           name="FechaCaptura" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[IDOrden]"
-                          dataType="i4"
-                          name="IDOrden" />
-                        <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[Ruta]"
                           codePage="1252"
                           dataType="str"
@@ -1767,10 +1826,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           length="45"
                           name="ciecaTipoParte" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[Cantidad]"
-                          dataType="i4"
-                          name="Cantidad" />
-                        <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[PrecioListaOnRO]"
                           codePage="1252"
                           dataType="str"
@@ -1790,6 +1845,34 @@ WHERE ((O.Fecha_Orden&gt;?)
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Descuento]"
                           dataType="i4"
                           name="ID_Descuento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID_Cotizacion]"
+                          dataType="i4"
+                          name="VehiculoID_Cotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[VehiculoID_Orden]"
+                          dataType="i4"
+                          name="VehiculoID_Orden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte_Cotizacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte_Cotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Parte_Orden]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte_Orden" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[CantidadCotizacion]"
+                          dataType="i4"
+                          name="CantidadCotizacion" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de origen de OLE DB].ExternalColumns[CantidadOrden]"
+                          dataType="i4"
+                          name="CantidadOrden" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1840,17 +1923,29 @@ WHERE ((O.Fecha_Orden&gt;?)
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[NumLinea]"
                           name="NumLinea" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID]"
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID_Cotizacion]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID]"
-                          name="VehiculoID" />
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID_Cotizacion]"
+                          name="VehiculoID_Cotizacion" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte]"
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID_Orden]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[VehiculoID_Orden]"
+                          name="VehiculoID_Orden" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte_Cotizacion]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte]"
-                          name="ID_Parte" />
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte_Cotizacion]"
+                          name="ID_Parte_Cotizacion" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte_Orden]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ID_Parte_Orden]"
+                          name="ID_Parte_Orden" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[IDAseguradora]"
                           dataType="i4"
@@ -2046,11 +2141,6 @@ WHERE ((O.Fecha_Orden&gt;?)
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[FechaCaptura]"
                           name="FechaCaptura" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[IDOrden]"
-                          dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[IDOrden]"
-                          name="IDOrden" />
-                        <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[Ruta]"
                           codePage="1252"
                           dataType="str"
@@ -2093,10 +2183,15 @@ WHERE ((O.Fecha_Orden&gt;?)
                           lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[ciecaTipoParte]"
                           name="ciecaTipoParte" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[Cantidad]"
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[CantidadCotizacion]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[Cantidad]"
-                          name="Cantidad" />
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[CantidadCotizacion]"
+                          name="CantidadCotizacion" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[CantidadOrden]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[CantidadOrden]"
+                          name="CantidadOrden" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion.Outputs[Salida de error de origen de OLE DB].Columns[PrecioListaOnRO]"
                           codePage="1252"
@@ -2181,6 +2276,22 @@ WHERE ((O.Fecha_Orden&gt;?)
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5B49448C-D1F3-43D2-BCC8-E1A97E310B9D}"
+          DTS:From="Package\Contenedor de secuencias\Definir OrigenOrden"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Contenedor de secuencias\Calcular Total Cotizacion" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E8656C67-ADB5-4553-A9AA-B0835A001E4D}"
+          DTS:From="Package\Contenedor de secuencias\Calcular Total Cotizacion"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Contenedor de secuencias\Actualizar Hechos" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
           DTS:CreationName=""
           DTS:DTSID="{CF118322-771A-4094-BCD1-937053491612}"
@@ -2204,43 +2315,39 @@ WHERE ((O.Fecha_Orden&gt;?)
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 2"
           DTS:To="Package\Contenedor de secuencias\Definir OrigenOrden" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{6B646154-1E7F-4492-AFF7-3770FC388DF0}"
-          DTS:From="Package\Contenedor de secuencias\Definir OrigenOrden"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Restricción 3"
-          DTS:To="Package\Contenedor de secuencias\Actualizar Hechos" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Contenedor de secuencias\Actualizar Hechos"
-          TopLeft="113.428575880673,392.270594959687" />
+          TopLeft="112.428575880673,488.270594959687" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Contenedor de secuencias\Añadir fecha de ejecución"
           TopLeft="91.2857183607259,106.541179344811" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Contenedor de secuencias\Carga a Staging"
           TopLeft="119.857147418723,205.682357048741" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="173,42"
+          Id="Package\Contenedor de secuencias\Definir OrigenOrden"
+          TopLeft="109.857147248424,300.388240281108" />
+        <NodeLayout
+          Size="154,42"
           Id="Package\Contenedor de secuencias\Truncar Staging"
           TopLeft="112.000004427774,18.6000016408808" />
         <EdgeLayout
@@ -2287,10 +2394,6 @@ WHERE ((O.Fecha_Orden&gt;?)
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Contenedor de secuencias\Definir OrigenOrden"
-          TopLeft="109.857147248424,300.388240281108" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
           TopLeft="196.457147333573,247.282357048741">
@@ -2313,20 +2416,46 @@ WHERE ((O.Fecha_Orden&gt;?)
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Contenedor de secuencias\Calcular Total Cotizacion"
+          TopLeft="94,396" />
         <EdgeLayout
-          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
-          TopLeft="195.242861564549,341.988240281108">
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Constraint]"
+          TopLeft="193.678573624212,342.388240281108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.2823546785787"
+              EndConnector="0,53.611759718892"
               Start="0,0"
-              End="0,42.7823546785787">
+              End="0,46.111759718892">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.7823546785787" />
+                    End="0,46.111759718892" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Constraint 1]"
+          TopLeft="192.214287940336,438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2705949596871"
+              Start="0,0"
+              End="0,42.7705949596871">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7705949596871" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2338,10 +2467,10 @@ WHERE ((O.Fecha_Orden&gt;?)
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="374.4,488.8"
-          Size="374.4,532"
+          PanelSize="374,585"
+          Size="374,628"
           Id="Package\Contenedor de secuencias"
-          TopLeft="147.857145375135,55.0588243015909" />
+          TopLeft="443.857145375135,50.0588243015909" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2351,11 +2480,11 @@ WHERE ((O.Fecha_Orden&gt;?)
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Contenedor de secuencias\Carga a Staging\Destino staging"
           TopLeft="492.142865524001,182.000002552481" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Contenedor de secuencias\Carga a Staging\Fuente OrdenCotizacion"
           TopLeft="470.000008004053,72.647059842377" />
         <EdgeLayout

@@ -1,0 +1,1657 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/20/2021 8:47:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-RIC1U9O0"
+  DTS:CreatorName="LAPTOP-RIC1U9O0\Eduardo"
+  DTS:DTSID="{3CB76386-2B08-41F3-BD9A-95EB2109213E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{2BFABCF3-C505-450E-A9F8-92164A1B7C0C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-MHM32UUF.RepuestosWeb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C3B0671B-51B8-4FCD-ABF6-9ABDC26C366C}"
+      DTS:ObjectName="LAPTOP-MHM32UUF.RepuestosWeb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-MHM32UUF;Initial Catalog=RepuestosWeb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-MHM32UUF.RepuestosWebDWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{62D42241-57E7-467B-8DD6-8ACC491A18EA}"
+      DTS:ObjectName="LAPTOP-MHM32UUF.RepuestosWebDWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-MHM32UUF;Initial Catalog=RepuestosWebDWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.RepuestosWeb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BA54D973-89F7-40F2-9824-7FA1C7A5E61A}"
+      DTS:ObjectName="localhost.RepuestosWeb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=RepuestosWeb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{245C59C1-689F-473C-94A2-9758A5E0DA19}"
+      DTS:ObjectName="localhost.RepuestosWebDWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=RepuestosWebDWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dimension Clientes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{346d7cfb-16a6-47ee-9378-99b83617442f}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimension Clientes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dimension Clientes\Columnas de linaje Clientes"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Columnas de linaje Clientes"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dimension Clientes\Columnas de linaje Clientes.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dimension Clientes\Columnas de linaje Clientes.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]"
+                      name="ID_Batch"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_GUID)@[System::ExecutionInstanceGUID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_GUID)@[System::ExecutionInstanceGUID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]"
+                      name="ID_SourceSystem"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)@[System::PackageName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)@[System::PackageName]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dimension Clientes\Columnas de linaje Clientes.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Clientes\Fuente Clientes"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Fuente Clientes"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT	   C.ID_Cliente
+	          ,C.PrimerNombre + ' ' + C.SegundoNombre AS NombreCliente
+			  ,C.PrimerApellido + ' ' + C.SegundoApellido AS ApellidoCliente
+			  ,C.Genero
+			  ,C.Correo_Electronico
+			  ,C.FechaNacimiento
+			  ,C.Direccion
+			  --Columnas Auditoria
+			  ,GETDATE() AS FechaCreacion
+			  ,CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion
+			  ,GETDATE() AS FechaModificacion
+			  ,CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion
+	FROM RepuestosWeb.dbo.Clientes C</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Clientes\Fuente Clientes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.RepuestosWeb]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.RepuestosWeb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      name="ID_Cliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[NombreCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[NombreCliente]"
+                      length="201"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[NombreCliente]"
+                      name="NombreCliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ApellidoCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[ApellidoCliente]"
+                      length="201"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ApellidoCliente]"
+                      name="ApellidoCliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Genero]"
+                      length="1"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]"
+                      name="Genero"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Correo_Electronico]"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]"
+                      name="Correo_Electronico"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]"
+                      name="FechaNacimiento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaCreacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]"
+                      name="FechaCreacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[UsuarioCreacion]"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaModificacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]"
+                      name="FechaModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[UsuarioModificacion]"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      length="1000"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      dataType="i4"
+                      name="ID_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[NombreCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="201"
+                      name="NombreCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[ApellidoCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="201"
+                      name="ApellidoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Genero" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Correo_Electronico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Correo_Electronico" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Direccion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      name="ID_Cliente" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[NombreCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="201"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[NombreCliente]"
+                      name="NombreCliente" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ApellidoCliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="201"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ApellidoCliente]"
+                      name="ApellidoCliente" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Genero]"
+                      name="Genero" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Correo_Electronico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Correo_Electronico]"
+                      name="Correo_Electronico" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaNacimiento]"
+                      name="FechaNacimiento" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      name="Direccion" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaCreacion]"
+                      name="FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[FechaModificacion]"
+                      name="FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Clientes\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Dimension].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Clientes\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_Cliente"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Cliente]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[Genero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Genero"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genero]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[Correo_Electronico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Correo_Electronico"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Correo_Electronico]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Direccion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaNacimiento]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaNacimiento"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaCreacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioCreacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaModificacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
+                      cachedDataType="guid"
+                      cachedName="ID_Batch"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_SourceSystem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_SourceSystem"
+                      externalMetadataColumnId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SK_Cliente]"
+                      dataType="i4"
+                      name="SK_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Cliente]"
+                      dataType="i4"
+                      name="ID_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Genero" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Correo_Electronico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Correo_Electronico" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
+                      dataType="guid"
+                      name="ID_Batch" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_SourceSystem" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Clientes\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Clientes\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Clientes] SET [Correo_Electronico] = ?,[Direccion] = ?,[FechaCreacion] = ?,[FechaModificacion] = ?,[FechaNacimiento] = ?,[Genero] = ?,[ID_Batch] = ?,[ID_SourceSystem] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Cliente] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Clientes\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[Correo_Electronico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Correo_Electronico"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaNacimiento]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaNacimiento"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[Genero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Genero"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Batch]"
+                      cachedDataType="guid"
+                      cachedName="ID_Batch"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_Cliente"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_SourceSystem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_SourceSystem"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                    <inputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="dbTimeStamp"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbTimeStamp"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="guid"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Clientes\SCD Clientes"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="SCD Clientes"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Correo_Electronico], [Direccion], [FechaCreacion], [FechaModificacion], [FechaNacimiento], [Genero], [ID_Batch], [ID_Cliente], [ID_SourceSystem], [UsuarioCreacion], [UsuarioModificacion] FROM [Dimension].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Clientes\SCD Clientes.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.RepuestosWebDWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[Correo_Electronico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Correo_Electronico"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Correo_Electronico]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Direccion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaCreacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaModificacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[FechaNacimiento]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaNacimiento"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[Genero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Genero"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Genero]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[ID_Batch]"
+                      cachedDataType="guid"
+                      cachedName="ID_Batch"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[ID_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_Cliente"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Cliente]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[ID_SourceSystem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_SourceSystem"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
+                      lineageId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioCreacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      externalMetadataColumnId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioModificacion]"
+                      lineageId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Correo_Electronico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Correo_Electronico" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Genero" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
+                      dataType="guid"
+                      name="ID_Batch" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Cliente]"
+                      dataType="i4"
+                      name="ID_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioModificacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimension Clientes\SCD Clientes.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dimension Clientes.Paths[Changing Attribute Updates Output]"
+              endId="Package\Dimension Clientes\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Dimension Clientes\SCD Clientes.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Dimension Clientes.Paths[Derived Column Output]"
+              endId="Package\Dimension Clientes\SCD Clientes.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\Dimension Clientes\Columnas de linaje Clientes.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dimension Clientes.Paths[New Output]"
+              endId="Package\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Dimension Clientes\SCD Clientes.Outputs[New Output]" />
+            <path
+              refId="Package\Dimension Clientes.Paths[OLE DB Source Output]"
+              endId="Package\Dimension Clientes\Columnas de linaje Clientes.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dimension Clientes\Fuente Clientes.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Dimension Clientes"
+          TopLeft="637,86" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dimension Clientes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Dimension Clientes\Fuente Clientes"
+          TopLeft="561.5,66.5" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Dimension Clientes\Columnas de linaje Clientes"
+          TopLeft="533,168.5" />
+        <EdgeLayout
+          Id="Package\Dimension Clientes.Paths[OLE DB Source Output]"
+          TopLeft="637,108.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Dimension Clientes\SCD Clientes"
+          TopLeft="567.5,270.5" />
+        <EdgeLayout
+          Id="Package\Dimension Clientes.Paths[Derived Column Output]"
+          TopLeft="637,210.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Dimension Clientes\Insert Destination"
+          TopLeft="330.5,372.5" />
+        <EdgeLayout
+          Id="Package\Dimension Clientes.Paths[New Output]"
+          TopLeft="615.166666666667,312.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-203.166666666667,60"
+              Start="0,0"
+              End="-203.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4096728307255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4096728307255"
+                    Point2="0,24.4096728307255"
+                    Point3="-4,24.4096728307255" />
+                  <mssgle:LineSegment
+                    End="-199.166666666667,24.4096728307255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-199.166666666667,24.4096728307255"
+                    Point2="-203.166666666667,24.4096728307255"
+                    Point3="-203.166666666667,28.4096728307255" />
+                  <mssgle:LineSegment
+                    End="-203.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.674720052083,29.4096728307255,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Dimension Clientes\OLE DB Command"
+          TopLeft="807,371.5" />
+        <EdgeLayout
+          Id="Package\Dimension Clientes.Paths[Changing Attribute Updates Output]"
+          TopLeft="658.833333333333,312.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="231.166666666667,59"
+              Start="0,0"
+              End="231.166666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0028449502134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0028449502134"
+                    Point2="0,24.0028449502134"
+                    Point3="4,24.0028449502134" />
+                  <mssgle:LineSegment
+                    End="227.166666666667,24.0028449502134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="227.166666666667,24.0028449502134"
+                    Point2="231.166666666667,24.0028449502134"
+                    Point3="231.166666666667,28.0028449502134" />
+                  <mssgle:LineSegment
+                    End="231.166666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.0494270833333,29.0028449502134,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Clientes\Fuente Clientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Clientes\SCD Clientes">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{245C59C1-689F-473C-94A2-9758A5E0DA19}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[Dimension].[Clientes]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[Correo_Electronico]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Correo_Electronico&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[Direccion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Direccion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[FechaNacimiento]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaNacimiento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[Genero]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Genero&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_Batch]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Batch&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[ID_Cliente]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Cliente&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Columnas de linaje Clientes.Outputs[Derived Column Output].Columns[ID_SourceSystem]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_SourceSystem&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Clientes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
