@@ -15,3 +15,19 @@ SELECT [IDPlantaReparacion]
 	  ,GETDATE() AS FechaModificacion
 	  ,CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion
   FROM [RepuestosWeb].[dbo].[PlantaReparacion]
+
+
+CREATE INDEX [IndicePlantaReparacion] ON [PlantaReparacion] ( [IDPlantaReparacion] ) INCLUDE ( 
+	[CompanyNombre]
+    ,[Ciudad]
+    ,[Estado]
+    ,[CodigoPostal]
+    ,[Pais]
+    ,[AlmacenKeystone]
+    ,[LocalizadorCotizacion]
+    ,[FechaAgregado]
+    ,[ValidacionSeguro]
+    ,[Activo] )
+
+
+UPDATE STATISTICS PlantaReparacion WITH FULLSCAN

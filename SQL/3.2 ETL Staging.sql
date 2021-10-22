@@ -1,14 +1,16 @@
 --Query para llenar datos en Staging
-SELECT DO.[ID_Orden] AS [ID_Orden]
+SELECT O.[ID_Orden] AS [ID_Orden]
 	  ,O.[ID_Cliente] AS [ID_Cliente]
       ,O.[ID_Ciudad] AS [ID_Ciudad]
       ,C.[IDCotizacion] AS [IDCotizacion]
       ,O.[ID_StatusOrden] AS [ID_StatusOrden]
-	  ,DO.ID_Descuento AS [ID_Descuento]
       ,DO.[ID_DetalleOrden] AS [ID_DetalleOrden]
+	  ,DO.ID_Descuento AS [ID_Descuento]
 	  ,CD.[NumLinea] AS [NumLinea]
-      ,DO.[VehiculoID] AS [VehiculoID]
-      ,DO.[ID_Parte] AS [ID_Parte]
+      ,CD.[VehiculoID] AS [VehiculoID_Cotizacion]
+      ,DO.[VehiculoID] AS [VehiculoID_Orden]
+      ,CD.[ID_Parte] AS [ID_Parte_Cotizacion]
+      ,DO.[ID_Parte] AS [ID_Parte_Orden]
       ,C.[IDAseguradora] AS [IDAseguradora]
       ,C.[IDPlantaReparacion] AS [IDPlantaReparacion]
       ,C.[IDPartner] AS [IDPartner]
@@ -41,23 +43,23 @@ SELECT DO.[ID_Orden] AS [ID_Orden]
       ,C.[WrittenBy] AS [WrittenBy]
       ,C.[SeguroValidado] AS [SeguroValidado]
       ,C.[FechaCaptura] AS [FechaCaptura]
-      ,C.[IDOrden] AS [IDOrden]
       ,C.[Ruta] AS [Ruta]
       ,C.[FechaLimiteRuta] AS [FechaLimiteRuta]
       ,CD.[OETipoParte] AS [OETipoParte]
       ,CD.[AltPartNum] AS [AltPartNum]
       ,CD.[AltTipoParte] AS [AltTipoParte]
       ,CD.[ciecaTipoParte] AS [ciecaTipoParte]
-      ,CD.[Cantidad] AS [Cantidad]
+      ,CD.[Cantidad] AS [CantidadCotizacion]
+      ,DO.[Cantidad] AS [CantidadOrden]
       ,CD.[PrecioListaOnRO] AS [PrecioListaOnRO]
       ,CD.[PrecioNetoOnRO] AS [PrecioNetoOnRO]
       ,CD.[NecesitadoParaFecha] AS [NecesitadoParaFecha]
 FROM  RepuestosWeb.DBO.Orden O
-	FULL OUTER JOIN RepuestosWeb.DBO.Detalle_orden DO ON (O.ID_Orden = DO.ID_Orden)
+	LEFT OUTER JOIN RepuestosWeb.DBO.Detalle_orden DO ON (O.ID_Orden = DO.ID_Orden)
 	FULL OUTER JOIN RepuestosWeb.DBO.Cotizacion C ON (O.ID_Orden = C.IDOrden)
-	FULL OUTER JOIN RepuestosWeb.DBO.CotizacionDetalle CD ON (C.IDCotizacion = CD.IDCotizacion)  
+	LEFT OUTER JOIN RepuestosWeb.DBO.CotizacionDetalle CD ON (C.IDCotizacion = CD.IDCotizacion)  
 WHERE ((O.Fecha_Orden>?) 
+		OR (O.FechaModificacionSource>?) 
 		OR (C.FechaCreacionRegistro>?) 
-		OR (O.FechaModificacion>?) 
 		OR (C.FechaModificacion>?))
 GO
