@@ -11,11 +11,48 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{AD47CC3B-49C2-47A6-B334-A9502E54B54F}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{17518ED7-D55C-4A40-81AE-2614AC2CDB92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Status Orden]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AACBF33F-20A2-4512-9E94-47E7EE9D1AC8}"
+      DTS:ObjectName="CSV Status Orden">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\CSVS\DatosStatusOrden.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_StatusOrden"
+              DTS:DTSID="{97B7A56B-0EC9-425D-8F94-5779051972B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreStatus"
+              DTS:DTSID="{25EA34D4-881E-47C7-91D6-CF3D0CA8DD01}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.RepuestosWeb]"
       DTS:CreationName="OLEDB"
@@ -147,6 +184,123 @@
                       refId="Package\Dimension StatusOrden\Columnas de linaje StatusOrden.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Dimension StatusOrden\Columnas de linaje StatusOrden.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension StatusOrden\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension StatusOrden\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV Status Orden]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV Status Orden]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[ID_StatusOrden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_StatusOrden]"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[ID_StatusOrden]"
+                      name="ID_StatusOrden"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[NombreStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreStatus]"
+                      length="100"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[NombreStatus]"
+                      name="NombreStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_StatusOrden]"
+                      dataType="i4"
+                      name="ID_StatusOrden" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreStatus" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -446,7 +600,7 @@
                       cachedDataType="i4"
                       cachedName="ID_StatusOrden"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_StatusOrden]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[ID_StatusOrden]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreStatus]"
                       cachedCodepage="1252"
@@ -454,33 +608,33 @@
                       cachedLength="100"
                       cachedName="NombreStatus"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreStatus]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[NombreStatus]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaCreacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -613,13 +767,13 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -639,7 +793,7 @@
                       cachedDataType="i4"
                       cachedName="ID_StatusOrden"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[ID_StatusOrden]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombreStatus]"
                       cachedCodepage="1252"
@@ -647,21 +801,21 @@
                       cachedLength="100"
                       cachedName="NombreStatus"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[NombreStatus]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -859,7 +1013,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -872,7 +1026,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -913,7 +1067,7 @@
                       cachedDataType="i4"
                       cachedName="ID_StatusOrden"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_StatusOrden]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[ID_StatusOrden]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -928,7 +1082,7 @@
                       cachedLength="100"
                       cachedName="NombreStatus"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombreStatus]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[NombreStatus]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -942,7 +1096,7 @@
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -956,7 +1110,7 @@
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension StatusOrden\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1059,6 +1213,191 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Dimension StatusOrden\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 1].Columns[ID_StatusOrden]"
+                      cachedDataType="i4"
+                      cachedName="ID_StatusOrden"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[ID_StatusOrden]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 1].Columns[NombreStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreStatus"
+                      lineageId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output].Columns[NombreStatus]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[ID_StatusOrden]"
+                      cachedDataType="i4"
+                      cachedName="ID_StatusOrden"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[ID_StatusOrden]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[NombreStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreStatus"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[NombreStatus]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      lineageId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]"
+                      dataType="i4"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[ID_StatusOrden]"
+                      name="ID_StatusOrden" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[NombreStatus]"
+                      name="NombreStatus" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      name="FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      name="FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1072,15 +1411,25 @@
               name="Derived Column Output"
               startId="Package\Dimension StatusOrden\Columnas de linaje StatusOrden.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Dimension StatusOrden.Paths[Flat File Source Output]"
+              endId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 1]"
+              name="Flat File Source Output"
+              startId="Package\Dimension StatusOrden\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
               refId="Package\Dimension StatusOrden.Paths[New Output]"
               endId="Package\Dimension StatusOrden\Insert Destination.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Dimension StatusOrden\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Dimension StatusOrden.Paths[OLE DB Source Output]"
-              endId="Package\Dimension StatusOrden\Columnas de linaje StatusOrden.Inputs[Derived Column Input]"
+              endId="Package\Dimension StatusOrden\Union All.Inputs[Union All Input 2]"
               name="OLE DB Source Output"
               startId="Package\Dimension StatusOrden\Fuente Status Orden.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dimension StatusOrden.Paths[Union All Output 1]"
+              endId="Package\Dimension StatusOrden\Columnas de linaje StatusOrden.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Dimension StatusOrden\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1113,66 +1462,26 @@
         <NodeLayout
           Size="179,42"
           Id="Package\Dimension StatusOrden\Fuente Status Orden"
-          TopLeft="533,81.5" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Dimension StatusOrden\Columnas de linaje StatusOrden"
-          TopLeft="506,183.5" />
-        <EdgeLayout
-          Id="Package\Dimension StatusOrden.Paths[OLE DB Source Output]"
-          TopLeft="621.75,123.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="745,35.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Dimension StatusOrden\Slowly Changing Dimension"
-          TopLeft="516.5,285.5" />
-        <EdgeLayout
-          Id="Package\Dimension StatusOrden.Paths[Derived Column Output]"
-          TopLeft="621,225.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="515.5,371.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Dimension StatusOrden\OLE DB Command"
+          TopLeft="791,475.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dimension StatusOrden\Insert Destination"
-          TopLeft="314.5,387.5" />
+          TopLeft="313.5,473.5" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Dimension StatusOrden\Columnas de linaje StatusOrden"
+          TopLeft="505,269.5" />
         <EdgeLayout
           Id="Package\Dimension StatusOrden.Paths[New Output]"
-          TopLeft="587.5,327.5">
+          TopLeft="586.5,413.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1206,13 +1515,31 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Dimension StatusOrden\OLE DB Command"
-          TopLeft="792,389.5" />
+        <EdgeLayout
+          Id="Package\Dimension StatusOrden.Paths[Derived Column Output]"
+          TopLeft="620,311.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimension StatusOrden.Paths[Changing Attribute Updates Output]"
-          TopLeft="654.5,327.5">
+          TopLeft="653.5,413.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1246,17 +1573,107 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Dimension StatusOrden\Union All"
+          TopLeft="553,145" />
+        <EdgeLayout
+          Id="Package\Dimension StatusOrden.Paths[Union All Output 1]"
+          TopLeft="616.75,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.5"
+              Start="0,0"
+              End="0,75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Dimension StatusOrden\Flat File Source"
+          TopLeft="440,36" />
+        <EdgeLayout
+          Id="Package\Dimension StatusOrden.Paths[Flat File Source Output]"
+          TopLeft="515.5,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,67"
+              Start="0,0"
+              End="98,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="94,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,33.5"
+                    Point2="98,33.5"
+                    Point3="98,37.5" />
+                  <mssgle:LineSegment
+                    End="98,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimension StatusOrden.Paths[OLE DB Source Output]"
+          TopLeft="834.5,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202.166666666667,67.5"
+              Start="0,0"
+              End="-202.166666666667,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9714518760196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.9714518760196"
+                    Point2="0,39.9714518760196"
+                    Point3="-4,39.9714518760196" />
+                  <mssgle:LineSegment
+                    End="-198.166666666667,39.9714518760196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198.166666666667,39.9714518760196"
+                    Point2="-202.166666666667,39.9714518760196"
+                    Point3="-202.166666666667,43.9714518760196" />
+                  <mssgle:LineSegment
+                    End="-202.166666666667,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimension StatusOrden\Fuente Status Orden">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimension StatusOrden\Slowly Changing Dimension">
     <Properties>
@@ -1333,6 +1750,14 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension StatusOrden\Fuente Status Orden">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

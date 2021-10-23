@@ -1,0 +1,101 @@
+ID_Linea,NombreLinea,ID_Categoria,NombreCategoria,ID_Parte,NombreParte,Precio
+1,339,1,Engine,*220MISC,Misc - Miscellaneous Parts,285.85
+2,444,2,Exterior,*221MISC,Misc - Miscellaneous Parts,354.34
+3,999LCC,3,Fuel System,*222MISC,Misc - Miscellaneous Parts,353.12
+4,665,4,Heating/Air,*223MISC,Misc - Miscellaneous Parts,471.39
+5,999CRT,5,Interior,*224MISC,Misc - Miscellaneous Parts,312.42
+6,550,6,Lights,*225MISC,Misc - Miscellaneous Parts,61.38
+7,999TDF,7,Paint,*226MISC,Misc - Miscellaneous Parts,130.42
+8,226,8,Suspension,*227MISC,Misc - Miscellaneous Parts,161.39
+9,676,9,Wheels,*228MISC,Misc - Miscellaneous Parts,481.84
+10,663,10,Windshield Washer Motor,*229MISC,Misc - Miscellaneous Parts,300.97
+11,220,11,Voltage Regulator,*230MISC,Misc - Miscellaneous Parts,290.89
+12,100,12,Turbo-Supercharger,*231MISC,Misc - Miscellaneous Parts,141.31
+13,225,13,Transmission Parts,*330MISC,Misc - Miscellaneous Parts,491.7
+14,773C,14,Transmission Or Transaxle Assembly,*339MISC,Misc - Miscellaneous Parts,266.76
+15,885C,15,Transfer Case Parts,*410MISC,Misc - Miscellaneous Parts,478.21
+16,887R,16,Starter Solenoid,*412MISC,Misc - Miscellaneous Parts,321.64
+17,430C,17,Starter Motor,*415CMISC,Misc - Miscellaneous Parts,106.39
+18,680,18,Relay,*415MISC,Misc - Miscellaneous Parts,279.42
+19,900,19,Intercooler,*415RMISC,Misc - Miscellaneous Parts,295.73
+20,775,20,Horn,*420CMISC,Misc - Miscellaneous Parts,430.62
+21,435,21,Generator,*420MISC,Misc - Miscellaneous Parts,420.73
+22,887C,22,Exhaust Parts,*420RMISC,Misc - Miscellaneous Parts,332.43
+23,9773,23,Engine Parts,*422MISC,Misc - Miscellaneous Parts,120.63
+24,999ACA,24,Engine Misc,*425CMISC,Misc - Miscellaneous Parts,172.15
+25,999MR,25,Engine Cooling,*425MISC,Misc - Miscellaneous Parts,479.65
+26,887,26,Engine Assembly,*425RMISC,Misc - Miscellaneous Parts,74.4
+27,668,27,EGR,*430CMISC,Misc - Miscellaneous Parts,305.45
+28,999WAR,28,Drive Shaft Parts,*430MISC,Misc - Miscellaneous Parts,497.51
+29,771C,29,Distributor,*430RMISC,Misc - Miscellaneous Parts,224.84
+30,999RNT,30,Coil/Ignitor,*435MISC,Misc - Miscellaneous Parts,413.75
+31,772,31,Blower Motor,*440MISC,Misc - Miscellaneous Parts,485.56
+32,430,32,Battery Tray,*442MISC,Misc - Miscellaneous Parts,201.04
+33,885,33,Battery,*444MISC,Misc - Miscellaneous Parts,97.34
+34,9886,34,Axle Parts,*445MISC,Misc - Miscellaneous Parts,260.32
+35,425R,35,Alternator,*446MISC,Misc - Miscellaneous Parts,279.81
+36,886R,36,Wiper & Washer,*447MISC,Misc - Miscellaneous Parts,482.61
+37,999VS,37,Quarter Panel & Parts,*450MISC,Misc - Miscellaneous Parts,131.59
+38,886C,38,Misc Parts,*460MISC,Misc - Miscellaneous Parts,475.4
+39,9771,39,Hood/Trunk Parts,*480MISC,Misc - Miscellaneous Parts,465.71
+40,661R,40,Hitch/Tow Hook/Winches,*550MISC,Misc - Miscellaneous Parts,352.17
+41,223,41,Grille,*551MISC,Misc - Miscellaneous Parts,293.5
+42,881,42,Fender & Parts,*552MISC,Misc - Miscellaneous Parts,392.07
+43,450,43,Electrical Parts,*554MISC,Misc - Miscellaneous Parts,244.98
+44,885R,44,Door Parts,*555MISC,Misc - Miscellaneous Parts,394.52
+45,999FS,45,Bumpers & Parts,*558MISC,Misc - Miscellaneous Parts,109.92
+46,9999,46,Body Parts,*559MISC,Misc - Miscellaneous Parts,283.86
+47,999886,47,Fuel Vapor Canister,*660MISC,Misc - Miscellaneous Parts,406.05
+48,999PRE,48,Fuel Tank Send Unit,*661CMISC,Misc - Miscellaneous Parts,434.7
+49,554,49,Fuel Tank,*661MISC,Misc - Miscellaneous Parts,430.01
+50,415C,50,Fuel Pump,*661RMISC,Misc - Miscellaneous Parts,266.67
+51,667,51,Fuel Pacer System,*662MISC,Hood,327.27
+52,ACQ,52,Fuel Lines,*663MISC,Misc - Miscellaneous Parts,346.84
+53,460,53,Fuel Injector Parts,*664MISC,Misc - Miscellaneous Parts,106.04
+54,425C,54,Fuel Gauge,*665MISC,Misc - Miscellaneous Parts,155.18
+55,420,55,Fuel Filler Neck,*666MISC,Misc - Miscellaneous Parts,174.75
+56,552,56,Fuel Filler Door,*667MISC,Misc - Miscellaneous Parts,453.43
+57,446,57,Fuel Cap,*668MISC,Misc - Miscellaneous Parts,283.71
+58,776C,58,Refrigerant,*669MISC,Misc - Miscellaneous Parts,230.96
+59,558,59,Heater Housing,*670MISC,Misc - Miscellaneous Parts,491.75
+60,660,60,Heater Core/Element,*676MISC,Misc - Miscellaneous Parts,288.01
+61,422,61,Heater Assembly,*680MISC,Misc - Miscellaneous Parts,255.94
+62,230,62,Heater - AC Parts,*680RMISC,Misc - Miscellaneous Parts,132.91
+63,773,63,AC Receiver Drier,*681MISC,Misc - Miscellaneous Parts,436.56
+64,999661,64,AC Hoses,*682CMISC,Misc - Miscellaneous Parts,118.09
+65,999SUP,65,AC Evaporator Housing,*682MISC,Misc - Miscellaneous Parts,315.41
+66,9661,66,AC Evaporator,*682RMISC,Misc - Miscellaneous Parts,139.85
+67,9887,67,AC Condenser,*691MISC,Misc - Miscellaneous Parts,93.96
+68,999DFI,68,AC Compressor Clutch,*771CMISC,Misc - Miscellaneous Parts,281.37
+69,681,69,AC Compressor,*771MISC,Misc - Miscellaneous Parts,486.96
+70,999RPK,70,Sun Visor/Shade,*771RCUSTOM1,Misc - Miscellaneous Parts,495.6
+71,415R,71,Seats & Parts,*771RCUSTOM2,Misc - Miscellaneous Parts,240.05
+72,779,72,Radio/Nav/Gps,*771RCUSTOM3,Misc - Miscellaneous Parts,130.99
+73,999,73,Interior Rear View Mirror,*771RCUSTOM4,Misc - Miscellaneous Parts,313.72
+74,229,74,Interior Parts,*771RCUSTOM5,Misc - Miscellaneous Parts,443.56
+75,330,75,Interior Door Parts,*771RMISC,Misc - Miscellaneous Parts,187.12
+76,999LBR,76,Glass Parts,*771RMISC_REBAR,Misc - Miscellaneous Parts,78.66
+77,886,77,Electrical Parts,*772MISC,Misc - Miscellaneous Parts,137.44
+78,999RCF,78,Dash & Console Parts,*772RMISC,Misc - Miscellaneous Parts,226.11
+79,884,79,Complete Interior,*773CMISC,Misc - Miscellaneous Parts,112.22
+80,773R,80,Cargo Cover/Shade,*773MISC,Misc - Miscellaneous Parts,245.79
+81,412,81,Tail Lamp Assembly,*773RMISC,Misc - Miscellaneous Parts,168.36
+82,772R,82,Side Marker Lamp Rear,*773SPOT,Misc - Miscellaneous Parts,370.75
+83,420C,83,License Lamp,*775MISC,Misc - Miscellaneous Parts,117.49
+84,771,84,High Mounted Stop Lamp,*776MISC,Misc - Miscellaneous Parts,458.18
+85,224,85,Headlamp Door-Cover,*776RMISC,Misc - Miscellaneous Parts,136.47
+86,447,86,Headlamp Assembly,*779MISC,Misc - Miscellaneous Parts,188.71
+87,559,87,Fog/Driving Light Assembly,*880MISC,Misc - Miscellaneous Parts,145
+88,999CIC,88,Backup Lamp Assembly,*881MISC,Misc - Miscellaneous Parts,442.16
+89,669,89,Windshield,*882MISC,Misc - Miscellaneous Parts,135.56
+90,221,90,Wheel Weights,*884MISC,Misc - Miscellaneous Parts,326.39
+91,888,91,Welding,*885CMISC,Wheel,248.9
+92,999SSC,92,Towels/Wipers/Rags,*885MISC,Misc - Miscellaneous Parts,400.63
+93,670,93,Tools-Equipment,*885RMISC,Misc - Miscellaneous Parts,483.65
+94,445,94,Tape (Non Masking),*886CMISC,Wheel,227.69
+95,662,95,Spray Booth Maint,*886MISC,Misc - Miscellaneous Parts,146.23
+96,551,96,Solvent/Thinner/Reducer,*886RMISC,Misc - Miscellaneous Parts,210.58
+97,661S,97,Shop Supplies,*887CMISC,Wheel Cover,455.51
+98,999ADV,98,Seam Sealers,*887MISC,Misc - Miscellaneous Parts,176.89
+99,227,99,Paints,*887RMISC,Misc - Miscellaneous Parts,129.1
+100,425,100,Paint Removal,*888MISC,Misc - Miscellaneous Parts,470.08

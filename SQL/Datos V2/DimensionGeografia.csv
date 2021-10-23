@@ -1,0 +1,101 @@
+ID_Pais,NombrePais,ID_Region,NombreRegion,ID_Ciudad,NombreCiudad,CodigoPostal
+1,Jamaica,1,Tyne and Wear,1,Baton Rouge,16780
+2,Panama,2,Ayrshire,2,Montgomery,60992
+3,Brasil,3,Cambridgeshire,3,Spokane,78457
+4,Guatemala,4,Cumberland,4,Colorado,92858
+5,Mexico,5,Bedfordshire,5,Tulsa,9021
+6,Nicaragua,6,Gloucestershire,6,Memphis,92722
+7,El Salvador,7,Derbyshire,7,Birmingham,22090
+8,Colombia,8,Down,8,Milwaukee,43275
+9,Argentina,9,Staffordshire,9,Glendale,97597
+10,España,10,Surrey,10,Arlington,45848
+11,Estados Unidos,11,Westmorland,11,Memphis,4869
+12,Costa Rica,12,Derbyshire,12,Omaha,95562
+13,Belice,13,Banffshire,13,Little Rock,30200
+14,Honduras,14,Hertfordshire,14,Nashville,13352
+15,Jamaica,15,Northumberland,15,Columbus,79598
+16,Panama,16,West Lothian,16,Mobile,98498
+17,Brasil,17,Moray,17,Jacksonville,88428
+18,Guatemala,18,Gloucestershire,18,Baltimore,82406
+19,Mexico,19,Isle of Wight,19,Cincinnati,53532
+20,Nicaragua,20,Berwickshire,20,Louisville,74139
+21,El Salvador,21,Cromartyshire,21,San Francisco,40797
+22,Colombia,22,Rutland,22,Newark,14162
+23,Argentina,23,Clwyd,23,Oakland,99436
+24,España,24,Norfolk,24,Miami,6383
+25,Estados Unidos,25,Dorset,25,Nashville,15591
+26,Costa Rica,26,Somerset,26,Tulsa,34948
+27,Belice,27,Leicestershire,27,San Diego,39509
+28,Honduras,28,Lancashire,28,Pittsburgh,59133
+29,Jamaica,29,Kinross-shire,29,Tacoma,94823
+30,Panama,30,Clwyd,30,Albuquerque,65627
+31,Brasil,31,Greater Manchester,31,Bakersfield,81272
+32,Guatemala,32,Argyll,32,Akron,25160
+33,Mexico,33,Cumberland,33,Lubbock,40713
+34,Nicaragua,34,Derbyshire,34,Akron,38129
+35,El Salvador,35,Shropshire,35,Garland,51178
+36,Colombia,36,Leicestershire,36,Cleveland,10231
+37,Argentina,37,Orkney,37,Glendale,97630
+38,España,38,Tyne and Wear,38,Anaheim,23318
+39,Estados Unidos,39,Antrim,39,Philadelphia,54139
+40,Costa Rica,40,Londonderry,40,Santa Ana,5251
+41,Belice,41,County Durham,41,Columbus,65685
+42,Honduras,42,Kirkcudbrightshire,42,Richmond,40892
+43,Jamaica,43,Herefordshire,43,San Francisco,69829
+44,Panama,44,Surrey,44,Albuquerque,33371
+45,Brasil,45,Down,45,Hialeah,18023
+46,Guatemala,46,Argyll,46,Tucson,54557
+47,Mexico,47,Worcestershire,47,Pittsburgh,14737
+48,Nicaragua,48,West Lothian,48,Santa Ana,56156
+49,El Salvador,49,Kinross-shire,49,Albuquerque,17651
+50,Colombia,50,Banffshire,50,Grand Rapids,78326
+51,Argentina,51,Oxfordshire,51,Birmingham,91723
+52,España,52,Greater Manchester,52,San Francisco,231
+53,Estados Unidos,53,Wigtownshire,53,Austin,89662
+54,Costa Rica,54,Tyne and Wear,54,Wichita,25101
+55,Belice,55,Gwynedd,55,Norfolk,90288
+56,Honduras,56,Cumbria,56,Milwaukee,9704
+57,Canada,57,Inverness-shire,57,Fresno,92335
+58,Jamaica,58,Nairnshire,58,Miami,77607
+59,Panama,59,Londonderry,59,Portland,11689
+60,Brasil,60,Cromartyshire,60,Arlington,58922
+61,Guatemala,61,Gwent,61,Indianapolis,52242
+62,Mexico,62,West Lothian,62,Seattle,77506
+63,Nicaragua,63,Middlesex,63,Cleveland,29053
+64,El Salvador,64,Aberdeenshire,64,Mesa,88216
+65,Colombia,65,Gloucestershire,65,Corpus Christi,12964
+66,Argentina,66,Antrim,66,Miami,57007
+67,España,67,Berkshire,67,Birmingham,33443
+68,Estados Unidos,68,Westmorland,68,Nashville,60575
+69,Costa Rica,69,Selkirkshire,69,Charlotte,463
+70,Belice,70,Cumberland,70,Columbus,4552
+71,Honduras,71,Devon,71,Lubbock,11395
+72,Jamaica,72,Middlesex,72,Tampa,82261
+73,Panama,73,Huntingdonshire,73,Detroit,94534
+74,Brasil,74,Leicestershire,74,Columbus,14695
+75,Guatemala,75,Tyne and Wear,75,Minneapolis,19460
+76,Mexico,76,Gwynedd,76,Albuquerque,88042
+77,Nicaragua,77,Humberside,77,Minneapolis,66568
+78,El Salvador,78,West Midlands,78,Los Angeles,83947
+79,Colombia,79,Nottinghamshire,79,Birmingham,86983
+80,Argentina,80,Bute,80,Columbus,42588
+81,España,81,Dyfed,81,Chicago,32298
+82,Estados Unidos,82,Somerset,82,Santa Ana,94136
+83,Costa Rica,83,Ayrshire,83,Chicago,15520
+84,Belice,84,Dorset,84,Baltimore,46258
+85,Honduras,85,Argyll,85,Shreveport,29519
+86,Jamaica,86,Tyrone,86,Madison,67892
+87,Jamaica,87,Inverness-shire,87,Tulsa,18564
+88,Panama,88,Dumfriesshire,88,Atlanta,74917
+89,Brasil,89,Herefordshire,89,Dallas,31134
+90,Guatemala,90,Middlesex,90,Baton Rouge,38486
+91,Mexico,91,Bute,91,Raleigh,77507
+92,Nicaragua,92,Berkshire,92,Honolulu,91291
+93,El Salvador,93,Wiltshire,93,Portland,68107
+94,Colombia,94,Northumberland,94,Philadelphia,31278
+95,Argentina,95,Cornwall,95,Pittsburgh,82366
+96,España,96,Greater Manchester,96,Little Rock,12269
+97,Estados Unidos,97,Suffolk,97,Mesa,67702
+98,Costa Rica,98,East Lothian,98,Birmingham,53096
+99,Belice,99,Lincolnshire,99,Baton Rouge,2005
+100,Honduras,100,Buckinghamshire,100,Albuquerque,69972

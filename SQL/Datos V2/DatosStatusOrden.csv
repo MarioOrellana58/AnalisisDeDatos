@@ -1,0 +1,7 @@
+ID_StatusOrden,NombreStatus
+1,Procesado
+2,Cancelado
+3,Recibido
+4,Enviado
+5,Pagado
+6,Ingresado

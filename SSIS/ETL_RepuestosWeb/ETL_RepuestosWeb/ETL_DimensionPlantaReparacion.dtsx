@@ -11,11 +11,243 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ETL_DimensionPlantaReparacion"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{82E5B52A-10B1-46E6-9A80-5C052B7434E6}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{A2A076A0-E5A1-47EA-925C-F8C788D924F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Planta Reparacion]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1F23D4A7-5EFA-407B-A01A-CAF221C0C2F1}"
+      DTS:ObjectName="CSV Planta Reparacion">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\CSVS\DatosPlantaReparacion.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IDPlantaReparacion"
+              DTS:DTSID="{BFCF4537-A866-4C1A-A7CD-4581D426390E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompanyNombre"
+              DTS:DTSID="{892235A1-1DA6-454C-88DB-A0CEB7CBA428}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Direccion"
+              DTS:DTSID="{BA1A2E4F-E730-4A0D-A8FB-9C29BAD90A9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Direccion2"
+              DTS:DTSID="{7B0559CE-5EF7-47ED-A07B-3288ED9165FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ciudad"
+              DTS:DTSID="{7351955D-487E-40C2-B188-388454DC5BF5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Estado"
+              DTS:DTSID="{8F11A62C-D35E-486C-9E5C-88BA47D89C06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CodigoPostal"
+              DTS:DTSID="{AB0E1E6D-A90E-4CFE-B9A7-1A545CC1A135}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pais"
+              DTS:DTSID="{2294722D-FDEB-4816-A154-CB5E556E8580}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TelefonoAlmacen"
+              DTS:DTSID="{83685AC2-DCFD-4526-9549-0D9E7961DBBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FaxAlmacen"
+              DTS:DTSID="{9ABD402D-5454-4416-8E97-1F8A12FD4522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CorreoContacto"
+              DTS:DTSID="{F7DF0512-55B5-4BE6-A12B-A96D5C03D3ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreContacto"
+              DTS:DTSID="{2D56C6B1-5DAB-46B5-9B4E-A8389FBA64F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TelefonoContacto"
+              DTS:DTSID="{546A1C75-20F3-490E-8E39-BCE07E8AD5D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TituloTrabajo"
+              DTS:DTSID="{FFD99F88-279E-49FD-8045-EDFBC750DD79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AlmacenKeystone"
+              DTS:DTSID="{56647645-2CEC-4636-A206-B1A03CD4EE2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IDPredio"
+              DTS:DTSID="{30CC6C7C-929E-4F45-8852-E30022BE1520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LocalizadorCotizacion"
+              DTS:DTSID="{F2FE9CDC-15B7-4F8D-9053-9A5093E0C745}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FechaAgregado"
+              DTS:DTSID="{F1086E5C-5929-494E-BDEF-780BD7C7056B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IDEmpresa"
+              DTS:DTSID="{32D9CCE0-1BCC-462E-B7D7-583C8E6BA7F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValidacionSeguro"
+              DTS:DTSID="{55B8755E-169B-4C60-AA77-2B117131D71F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Activo"
+              DTS:DTSID="{D2E95FCF-EA89-422F-BE8D-269AAAA89328}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreadoPor"
+              DTS:DTSID="{C126D5F0-F709-41C3-95E3-17CE1A634D80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ActualizadoPor"
+              DTS:DTSID="{E7B9144D-8868-4067-8D84-3AC9197BF8CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UltimaFechaActualizacion"
+              DTS:DTSID="{DE4F2DC4-15BA-45FC-BEBE-B6A18105C6D3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.RepuestosWeb]"
       DTS:CreationName="OLEDB"
@@ -147,6 +379,727 @@
                       refId="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension PlantaReparacion\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension PlantaReparacion\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV Planta Reparacion]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV Planta Reparacion]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDPlantaReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDPlantaReparacion]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDPlantaReparacion]"
+                      name="IDPlantaReparacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompanyNombre]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyNombre]"
+                      name="CompanyNombre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direccion]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Direccion2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direccion2]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Direccion2]"
+                      name="Direccion2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ciudad]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Estado]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Estado]"
+                      name="Estado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CodigoPostal]"
+                      length="10"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]"
+                      name="CodigoPostal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Pais]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pais]"
+                      length="4"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Pais]"
+                      name="Pais"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TelefonoAlmacen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TelefonoAlmacen]"
+                      length="12"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TelefonoAlmacen]"
+                      name="TelefonoAlmacen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[FaxAlmacen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FaxAlmacen]"
+                      length="12"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[FaxAlmacen]"
+                      name="FaxAlmacen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CorreoContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CorreoContacto]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CorreoContacto]"
+                      name="CorreoContacto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[NombreContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreContacto]"
+                      length="100"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[NombreContacto]"
+                      name="NombreContacto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TelefonoContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TelefonoContacto]"
+                      length="12"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TelefonoContacto]"
+                      name="TelefonoContacto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TituloTrabajo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TituloTrabajo]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[TituloTrabajo]"
+                      name="TituloTrabajo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[AlmacenKeystone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AlmacenKeystone]"
+                      length="3"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[AlmacenKeystone]"
+                      name="AlmacenKeystone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDPredio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDPredio]"
+                      length="4"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDPredio]"
+                      name="IDPredio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[LocalizadorCotizacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LocalizadorCotizacion]"
+                      length="4"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[LocalizadorCotizacion]"
+                      name="LocalizadorCotizacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[FechaAgregado]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FechaAgregado]"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[FechaAgregado]"
+                      name="FechaAgregado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDEmpresa]"
+                      length="3"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDEmpresa]"
+                      name="IDEmpresa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[ValidacionSeguro]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ValidacionSeguro]"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[ValidacionSeguro]"
+                      name="ValidacionSeguro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Activo]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Activo]"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Activo]"
+                      name="Activo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CreadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreadoPor]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CreadoPor]"
+                      name="CreadoPor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[ActualizadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ActualizadoPor]"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[ActualizadoPor]"
+                      name="ActualizadoPor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[UltimaFechaActualizacion]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UltimaFechaActualizacion]"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[UltimaFechaActualizacion]"
+                      name="UltimaFechaActualizacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDPlantaReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IDPlantaReparacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompanyNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompanyNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Direccion2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Direccion2" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CodigoPostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodigoPostal" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Pais" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TelefonoAlmacen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="TelefonoAlmacen" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FaxAlmacen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="FaxAlmacen" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CorreoContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CorreoContacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreContacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TelefonoContacto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="TelefonoContacto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TituloTrabajo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TituloTrabajo" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AlmacenKeystone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="AlmacenKeystone" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDPredio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="IDPredio" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LocalizadorCotizacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="LocalizadorCotizacion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FechaAgregado]"
+                      dataType="date"
+                      name="FechaAgregado" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IDEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IDEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ValidacionSeguro]"
+                      dataType="bool"
+                      name="ValidacionSeguro" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Activo]"
+                      dataType="bool"
+                      name="Activo" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CreadoPor" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ActualizadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ActualizadoPor" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UltimaFechaActualizacion]"
+                      dataType="date"
+                      name="UltimaFechaActualizacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -661,7 +1614,7 @@
                       cachedLength="50"
                       cachedName="IDPlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[IDPlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[CompanyNombre]"
                       cachedCodepage="1252"
@@ -669,7 +1622,7 @@
                       cachedLength="50"
                       cachedName="CompanyNombre"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyNombre]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CompanyNombre]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[Ciudad]"
                       cachedCodepage="1252"
@@ -677,7 +1630,7 @@
                       cachedLength="50"
                       cachedName="Ciudad"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ciudad]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Ciudad]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[Estado]"
                       cachedCodepage="1252"
@@ -685,7 +1638,7 @@
                       cachedLength="50"
                       cachedName="Estado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Estado]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Estado]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[CodigoPostal_PlantaReparacion]"
                       cachedCodepage="1252"
@@ -693,7 +1646,7 @@
                       cachedLength="10"
                       cachedName="CodigoPostal_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPostal_PlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CodigoPostal_PlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[Pais]"
                       cachedCodepage="1252"
@@ -701,7 +1654,7 @@
                       cachedLength="4"
                       cachedName="Pais"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pais]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Pais]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[AlmacenKeystone]"
                       cachedCodepage="1252"
@@ -709,7 +1662,7 @@
                       cachedLength="3"
                       cachedName="AlmacenKeystone"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[AlmacenKeystone]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[AlmacenKeystone]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[LocalizadorCotizacion]"
                       cachedCodepage="1252"
@@ -717,51 +1670,51 @@
                       cachedLength="4"
                       cachedName="LocalizadorCotizacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocalizadorCotizacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[LocalizadorCotizacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaAgregado]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaAgregado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaAgregado]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaAgregado]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[ValidacionSeguro]"
                       cachedDataType="bool"
                       cachedName="ValidacionSeguro"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ValidacionSeguro]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[ValidacionSeguro]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[Activo_PlantaReparacion]"
                       cachedDataType="bool"
                       cachedName="Activo_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Activo_PlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Activo_PlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaCreacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -944,7 +1897,7 @@
                       cachedDataType="bool"
                       cachedName="Activo_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Activo_PlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[AlmacenKeystone]"
                       cachedCodepage="1252"
@@ -952,7 +1905,7 @@
                       cachedLength="3"
                       cachedName="AlmacenKeystone"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[AlmacenKeystone]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[Ciudad]"
                       cachedCodepage="1252"
@@ -960,7 +1913,7 @@
                       cachedLength="50"
                       cachedName="Ciudad"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Ciudad]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[CodigoPostal_PlantaReparacion]"
                       cachedCodepage="1252"
@@ -968,7 +1921,7 @@
                       cachedLength="10"
                       cachedName="CodigoPostal_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CodigoPostal_PlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[CompanyNombre]"
                       cachedCodepage="1252"
@@ -976,7 +1929,7 @@
                       cachedLength="50"
                       cachedName="CompanyNombre"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CompanyNombre]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[Estado]"
                       cachedCodepage="1252"
@@ -984,25 +1937,25 @@
                       cachedLength="50"
                       cachedName="Estado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Estado]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaAgregado]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaAgregado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaAgregado]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaCreacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -1024,7 +1977,7 @@
                       cachedLength="50"
                       cachedName="IDPlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[IDPlantaReparacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[LocalizadorCotizacion]"
                       cachedCodepage="1252"
@@ -1032,7 +1985,7 @@
                       cachedLength="4"
                       cachedName="LocalizadorCotizacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[LocalizadorCotizacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[Pais]"
                       cachedCodepage="1252"
@@ -1040,27 +1993,27 @@
                       cachedLength="4"
                       cachedName="Pais"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Pais]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                     <inputColumn
                       refId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[ValidacionSeguro]"
                       cachedDataType="bool"
                       cachedName="ValidacionSeguro"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[ValidacionSeguro]" />
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1371,7 +2324,7 @@
                       cachedDataType="bool"
                       cachedName="Activo_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[Activo_PlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Activo_PlantaReparacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1386,7 +2339,7 @@
                       cachedLength="3"
                       cachedName="AlmacenKeystone"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[AlmacenKeystone]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[AlmacenKeystone]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1401,7 +2354,7 @@
                       cachedLength="50"
                       cachedName="Ciudad"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[Ciudad]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Ciudad]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1416,7 +2369,7 @@
                       cachedLength="10"
                       cachedName="CodigoPostal_PlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[CodigoPostal_PlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CodigoPostal_PlantaReparacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1431,7 +2384,7 @@
                       cachedLength="50"
                       cachedName="CompanyNombre"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyNombre]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CompanyNombre]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1446,7 +2399,7 @@
                       cachedLength="50"
                       cachedName="Estado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[Estado]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Estado]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1459,7 +2412,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaAgregado"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaAgregado]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaAgregado]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1472,7 +2425,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1485,7 +2438,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1528,7 +2481,7 @@
                       cachedLength="50"
                       cachedName="IDPlantaReparacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[IDPlantaReparacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[IDPlantaReparacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1543,7 +2496,7 @@
                       cachedLength="4"
                       cachedName="LocalizadorCotizacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[LocalizadorCotizacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[LocalizadorCotizacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1558,7 +2511,7 @@
                       cachedLength="4"
                       cachedName="Pais"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[Pais]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Pais]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1572,7 +2525,7 @@
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1586,7 +2539,7 @@
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1599,7 +2552,7 @@
                       cachedDataType="bool"
                       cachedName="ValidacionSeguro"
                       externalMetadataColumnId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Inputs[Slowly Changing Dimension Input].ExternalColumns[ValidacionSeguro]"
-                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[ValidacionSeguro]">
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1752,6 +2705,499 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Dimension PlantaReparacion\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[IDPlantaReparacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IDPlantaReparacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[IDPlantaReparacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[CompanyNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompanyNombre"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CompanyNombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[Ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ciudad"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Estado"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Estado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[CodigoPostal_PlantaReparacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodigoPostal_PlantaReparacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[CodigoPostal_PlantaReparacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[Pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Pais"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[AlmacenKeystone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="AlmacenKeystone"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[AlmacenKeystone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[LocalizadorCotizacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="LocalizadorCotizacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[LocalizadorCotizacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[FechaAgregado]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaAgregado"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaAgregado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[ValidacionSeguro]"
+                      cachedDataType="bool"
+                      cachedName="ValidacionSeguro"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[ValidacionSeguro]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[Activo_PlantaReparacion]"
+                      cachedDataType="bool"
+                      cachedName="Activo_PlantaReparacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[Activo_PlantaReparacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      lineageId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[IDPlantaReparacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IDPlantaReparacion"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[IDPlantaReparacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[CompanyNombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompanyNombre"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyNombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[Ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ciudad"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Estado"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Estado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[CodigoPostal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodigoPostal"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[Pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Pais"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[AlmacenKeystone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="AlmacenKeystone"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[AlmacenKeystone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[LocalizadorCotizacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="LocalizadorCotizacion"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[LocalizadorCotizacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[ValidacionSeguro]"
+                      cachedDataType="bool"
+                      cachedName="ValidacionSeguro"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[ValidacionSeguro]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2].Columns[Activo]"
+                      cachedDataType="bool"
+                      cachedName="Activo"
+                      lineageId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output].Columns[Activo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[IDPlantaReparacion]"
+                      name="IDPlantaReparacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CompanyNombre]"
+                      name="CompanyNombre" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Estado]"
+                      name="Estado" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[CodigoPostal_PlantaReparacion]"
+                      name="CodigoPostal_PlantaReparacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Pais]"
+                      name="Pais" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[AlmacenKeystone]"
+                      name="AlmacenKeystone" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[LocalizadorCotizacion]"
+                      name="LocalizadorCotizacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaAgregado]"
+                      name="FechaAgregado" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]"
+                      dataType="bool"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[ValidacionSeguro]"
+                      name="ValidacionSeguro" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]"
+                      dataType="bool"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[Activo_PlantaReparacion]"
+                      name="Activo_PlantaReparacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      name="FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      name="FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1765,15 +3211,25 @@
               name="Derived Column Output"
               startId="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Dimension PlantaReparacion.Paths[Flat File Source Output]"
+              endId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 2]"
+              name="Flat File Source Output"
+              startId="Package\Dimension PlantaReparacion\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
               refId="Package\Dimension PlantaReparacion.Paths[New Output]"
               endId="Package\Dimension PlantaReparacion\Insert Destination.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Dimension PlantaReparacion\SCD PlantaReparacion.Outputs[New Output]" />
             <path
               refId="Package\Dimension PlantaReparacion.Paths[OLE DB Source Output]"
-              endId="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion.Inputs[Derived Column Input]"
+              endId="Package\Dimension PlantaReparacion\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
               startId="Package\Dimension PlantaReparacion\Fuente PlantaReparacion.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dimension PlantaReparacion.Paths[Union All Output 1]"
+              endId="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Dimension PlantaReparacion\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1806,66 +3262,26 @@
         <NodeLayout
           Size="196,47"
           Id="Package\Dimension PlantaReparacion\Fuente PlantaReparacion"
-          TopLeft="480,67.5" />
+          TopLeft="755,66.5" />
         <NodeLayout
-          Size="253,42"
-          Id="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion"
-          TopLeft="451.5,174.5" />
-        <EdgeLayout
-          Id="Package\Dimension PlantaReparacion.Paths[OLE DB Source Output]"
-          TopLeft="578,114.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Dimension PlantaReparacion\SCD PlantaReparacion"
-          TopLeft="486.5,276.5" />
-        <EdgeLayout
-          Id="Package\Dimension PlantaReparacion.Paths[Derived Column Output]"
-          TopLeft="578,216.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="166,42"
+          Id="Package\Dimension PlantaReparacion\OLE DB Command"
+          TopLeft="722,482.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dimension PlantaReparacion\Insert Destination"
-          TopLeft="271.5,378.5" />
+          TopLeft="271.5,481.5" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Dimension PlantaReparacion\Columnas de linaje PlantaReparacion"
+          TopLeft="451.5,277.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Dimension PlantaReparacion\SCD PlantaReparacion"
+          TopLeft="486.5,379.5" />
         <EdgeLayout
           Id="Package\Dimension PlantaReparacion.Paths[New Output]"
-          TopLeft="548.833333333333,318.5">
+          TopLeft="548.833333333333,421.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1899,13 +3315,31 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Dimension PlantaReparacion\OLE DB Command"
-          TopLeft="722,379.5" />
+        <EdgeLayout
+          Id="Package\Dimension PlantaReparacion.Paths[Derived Column Output]"
+          TopLeft="578,319.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimension PlantaReparacion.Paths[Changing Attribute Updates Output]"
-          TopLeft="607.166666666667,318.5">
+          TopLeft="607.166666666667,421.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1935,21 +3369,111 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="20.3827604166667,29.7172264355363,157.0678125,11.6630859375"
+              BoundingBox="20.3827604166665,29.7172264355363,157.0678125,11.6630859375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Dimension PlantaReparacion\Union All"
+          TopLeft="520,171" />
+        <EdgeLayout
+          Id="Package\Dimension PlantaReparacion.Paths[Union All Output 1]"
+          TopLeft="579.25,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.5"
+              Start="0,0"
+              End="0,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimension PlantaReparacion.Paths[OLE DB Source Output]"
+          TopLeft="853,113.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-272.5,57.5"
+              Start="0,0"
+              End="-272.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.75"
+                    Point2="0,28.75"
+                    Point3="-4,28.75" />
+                  <mssgle:LineSegment
+                    End="-268.5,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-268.5,28.75"
+                    Point2="-272.5,28.75"
+                    Point3="-272.5,32.75" />
+                  <mssgle:LineSegment
+                    End="-272.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Dimension PlantaReparacion\Flat File Source"
+          TopLeft="381,66" />
+        <EdgeLayout
+          Id="Package\Dimension PlantaReparacion.Paths[Flat File Source Output]"
+          TopLeft="456.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.166666666667,63"
+              Start="0,0"
+              End="105.166666666667,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3066884176183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.3066884176183"
+                    Point2="0,37.3066884176183"
+                    Point3="4,37.3066884176183" />
+                  <mssgle:LineSegment
+                    End="101.166666666667,37.3066884176183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.166666666667,37.3066884176183"
+                    Point2="105.166666666667,37.3066884176183"
+                    Point3="105.166666666667,41.3066884176183" />
+                  <mssgle:LineSegment
+                    End="105.166666666667,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimension PlantaReparacion\Fuente PlantaReparacion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimension PlantaReparacion\SCD PlantaReparacion">
     <Properties>
@@ -2080,6 +3604,14 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension PlantaReparacion\Fuente PlantaReparacion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
