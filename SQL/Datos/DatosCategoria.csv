@@ -1,0 +1,101 @@
+ID_Categoria,NombreCategoria
+1,Engine
+2,Exterior
+3,Fuel System
+4,Heating/Air
+5,Interior
+6,Lights
+7,Paint
+8,Suspension
+9,Wheels
+10,Windshield Washer Motor
+11,Voltage Regulator
+12,Turbo-Supercharger
+13,Transmission Parts
+14,Transmission Or Transaxle Assembly
+15,Transfer Case Parts
+16,Starter Solenoid
+17,Starter Motor
+18,Relay
+19,Intercooler
+20,Horn
+21,Generator
+22,Exhaust Parts
+23,Engine Parts
+24,Engine Misc
+25,Engine Cooling
+26,Engine Assembly
+27,EGR
+28,Drive Shaft Parts
+29,Distributor
+30,Coil/Ignitor
+31,Blower Motor
+32,Battery Tray
+33,Battery
+34,Axle Parts
+35,Alternator
+36,Wiper & Washer
+37,Quarter Panel & Parts
+38,Misc Parts
+39,Hood/Trunk Parts
+40,Hitch/Tow Hook/Winches
+41,Grille
+42,Fender & Parts
+43,Electrical Parts
+44,Door Parts
+45,Bumpers & Parts
+46,Body Parts
+47,Fuel Vapor Canister
+48,Fuel Tank Send Unit
+49,Fuel Tank
+50,Fuel Pump
+51,Fuel Pacer System
+52,Fuel Lines
+53,Fuel Injector Parts
+54,Fuel Gauge
+55,Fuel Filler Neck
+56,Fuel Filler Door
+57,Fuel Cap
+58,Refrigerant
+59,Heater Housing
+60,Heater Core/Element
+61,Heater Assembly
+62,Heater - AC Parts
+63,AC Receiver Drier
+64,AC Hoses
+65,AC Evaporator Housing
+66,AC Evaporator
+67,AC Condenser
+68,AC Compressor Clutch
+69,AC Compressor
+70,Sun Visor/Shade
+71,Seats & Parts
+72,Radio/Nav/Gps
+73,Interior Rear View Mirror
+74,Interior Parts
+75,Interior Door Parts
+76,Glass Parts
+77,Electrical Parts
+78,Dash & Console Parts
+79,Complete Interior
+80,Cargo Cover/Shade
+81,Tail Lamp Assembly
+82,Side Marker Lamp Rear
+83,License Lamp
+84,High Mounted Stop Lamp
+85,Headlamp Door-Cover
+86,Headlamp Assembly
+87,Fog/Driving Light Assembly
+88,Backup Lamp Assembly
+89,Windshield
+90,Wheel Weights
+91,Welding
+92,Towels/Wipers/Rags
+93,Tools-Equipment
+94,Tape (Non Masking)
+95,Spray Booth Maint
+96,Solvent/Thinner/Reducer
+97,Shop Supplies
+98,Seam Sealers
+99,Paints
+100,Paint Removal

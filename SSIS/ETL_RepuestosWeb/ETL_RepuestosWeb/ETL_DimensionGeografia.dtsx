@@ -11,11 +11,91 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{EF89B3AF-11F9-4771-98BA-279C79BF5836}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8E1BFFA5-2F9B-4520-9CDA-0206226D5445}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Geografia]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{66E20835-63A2-40AD-BB2B-8FD2A8BA3786}"
+      DTS:ObjectName="CSV Geografia">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\CSVS\DimensionGeografia.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Pais"
+              DTS:DTSID="{D76DCB6D-7E22-4749-B372-8E8A8F5DBB91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombrePais"
+              DTS:DTSID="{F3A4786C-6A26-4618-A2F5-89558C21570C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Region"
+              DTS:DTSID="{941A88BA-9D69-48B7-9E9C-DA3EC045A75C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreRegion"
+              DTS:DTSID="{84F36BDF-DDFF-4F93-89D2-FA506C9EB0BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Ciudad"
+              DTS:DTSID="{76A794CF-E5FE-4B75-A81A-0DCA0ABF5348}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreCiudad"
+              DTS:DTSID="{067BAFC4-62FA-403B-9D26-4067E549C47C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CodigoPostal"
+              DTS:DTSID="{010567C9-4B56-4FF4-9F25-32FDA56D695E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAPTOP-MHM32UUF.RepuestosWeb]"
       DTS:CreationName="OLEDB"
@@ -183,6 +263,255 @@
                       refId="Package\Dimension Geografia\Columnas de linaje Geografia.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Dimension Geografia\Columnas de linaje Geografia.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimension Geografia\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimension Geografia\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV Geografia]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV Geografia]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Pais]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Pais]"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Pais]"
+                      name="ID_Pais"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombrePais]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombrePais]"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombrePais]"
+                      name="NombrePais"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Region]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Region]"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Region]"
+                      name="ID_Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreRegion]"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreRegion]"
+                      name="NombreRegion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Ciudad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Ciudad]"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Ciudad]"
+                      name="ID_Ciudad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreCiudad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreCiudad]"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreCiudad]"
+                      name="NombreCiudad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CodigoPostal]"
+                      length="50"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]"
+                      name="CodigoPostal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Pais]"
+                      dataType="i4"
+                      name="ID_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombrePais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombrePais" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Region]"
+                      dataType="i4"
+                      name="ID_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID_Ciudad]"
+                      dataType="i4"
+                      name="ID_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NombreCiudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CodigoPostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CodigoPostal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -597,19 +926,19 @@
                       cachedDataType="i4"
                       cachedName="ID_Ciudad"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Ciudad]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Region]"
                       cachedDataType="i4"
                       cachedName="ID_Region"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Region]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Pais]"
                       cachedDataType="i4"
                       cachedName="ID_Pais"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Pais]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreCiudad]"
                       cachedCodepage="1252"
@@ -617,7 +946,7 @@
                       cachedLength="100"
                       cachedName="NombreCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCiudad]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[CodigoPostalCiudad]"
                       cachedCodepage="1252"
@@ -625,7 +954,7 @@
                       cachedLength="50"
                       cachedName="CodigoPostalCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoPostal]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostalCiudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreRegion]"
                       cachedCodepage="1252"
@@ -633,7 +962,7 @@
                       cachedLength="100"
                       cachedName="NombreRegion"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreRegion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombrePais]"
                       cachedCodepage="1252"
@@ -641,33 +970,33 @@
                       cachedLength="100"
                       cachedName="NombrePais"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombrePais]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaCreacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -828,19 +1157,19 @@
                       cachedLength="50"
                       cachedName="CodigoPostalCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostalCiudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaCreacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Batch]"
                       cachedDataType="guid"
@@ -852,19 +1181,19 @@
                       cachedDataType="i4"
                       cachedName="ID_Ciudad"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Pais]"
                       cachedDataType="i4"
                       cachedName="ID_Pais"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_Region]"
                       cachedDataType="i4"
                       cachedName="ID_Region"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID_SourceSystem]"
                       cachedCodepage="1252"
@@ -880,7 +1209,7 @@
                       cachedLength="100"
                       cachedName="NombreCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombrePais]"
                       cachedCodepage="1252"
@@ -888,7 +1217,7 @@
                       cachedLength="100"
                       cachedName="NombrePais"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombreRegion]"
                       cachedCodepage="1252"
@@ -896,21 +1225,21 @@
                       cachedLength="100"
                       cachedName="NombreRegion"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]" />
                     <inputColumn
                       refId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1171,7 +1500,7 @@
                       cachedLength="50"
                       cachedName="CodigoPostalCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[CodigoPostal]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostalCiudad]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1184,7 +1513,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaCreacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1197,7 +1526,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[FechaModificacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1223,7 +1552,7 @@
                       cachedDataType="i4"
                       cachedName="ID_Ciudad"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Ciudad]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1236,7 +1565,7 @@
                       cachedDataType="i4"
                       cachedName="ID_Pais"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Pais]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1249,7 +1578,7 @@
                       cachedDataType="i4"
                       cachedName="ID_Region"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Region]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1279,7 +1608,7 @@
                       cachedLength="100"
                       cachedName="NombreCiudad"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombreCiudad]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1294,7 +1623,7 @@
                       cachedLength="100"
                       cachedName="NombrePais"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombrePais]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1309,7 +1638,7 @@
                       cachedLength="100"
                       cachedName="NombreRegion"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombreRegion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1323,7 +1652,7 @@
                       cachedLength="100"
                       cachedName="UsuarioCreacion"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioCreacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1337,7 +1666,7 @@
                       cachedLength="100"
                       cachedName="UsuarioModificacion"
                       externalMetadataColumnId="Package\Dimension Geografia\SCD Geografia.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsuarioModificacion]"
-                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1466,6 +1795,364 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Dimension Geografia\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[ID_Ciudad]"
+                      cachedDataType="i4"
+                      cachedName="ID_Ciudad"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[ID_Region]"
+                      cachedDataType="i4"
+                      cachedName="ID_Region"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[ID_Pais]"
+                      cachedDataType="i4"
+                      cachedName="ID_Pais"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[NombreCiudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreCiudad"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[CodigoPostalCiudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CodigoPostalCiudad"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostalCiudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreRegion"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[NombrePais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombrePais"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCreacion"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[UsuarioCreacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioCreacion"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaModificacion"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1].Columns[UsuarioModificacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="UsuarioModificacion"
+                      lineageId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[ID_Pais]"
+                      cachedDataType="i4"
+                      cachedName="ID_Pais"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[NombrePais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombrePais"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombrePais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[ID_Region]"
+                      cachedDataType="i4"
+                      cachedName="ID_Region"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Region]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreRegion"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreRegion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[ID_Ciudad]"
+                      cachedDataType="i4"
+                      cachedName="ID_Ciudad"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[ID_Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[NombreCiudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreCiudad"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[NombreCiudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2].Columns[CodigoPostal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CodigoPostal"
+                      lineageId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output].Columns[CodigoPostal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dimension Geografia\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]"
+                      name="ID_Ciudad" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]"
+                      name="ID_Region" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]"
+                      dataType="i4"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]"
+                      name="ID_Pais" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreCiudad]"
+                      name="NombreCiudad" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[CodigoPostalCiudad]"
+                      name="CodigoPostalCiudad" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]"
+                      name="NombreRegion" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]"
+                      name="NombrePais" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaCreacion]"
+                      name="FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[FechaModificacion]"
+                      name="FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1479,15 +2166,25 @@
               name="Derived Column Output"
               startId="Package\Dimension Geografia\Columnas de linaje Geografia.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Dimension Geografia.Paths[Flat File Source Output]"
+              endId="Package\Dimension Geografia\Union All.Inputs[Union All Input 2]"
+              name="Flat File Source Output"
+              startId="Package\Dimension Geografia\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
               refId="Package\Dimension Geografia.Paths[New Output]"
               endId="Package\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Dimension Geografia\SCD Geografia.Outputs[New Output]" />
             <path
               refId="Package\Dimension Geografia.Paths[OLE DB Source Output]"
-              endId="Package\Dimension Geografia\Columnas de linaje Geografia.Inputs[Derived Column Input]"
+              endId="Package\Dimension Geografia\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
               startId="Package\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dimension Geografia.Paths[Union All Output 1]"
+              endId="Package\Dimension Geografia\Columnas de linaje Geografia.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Dimension Geografia\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1520,66 +2217,26 @@
         <NodeLayout
           Size="160,42"
           Id="Package\Dimension Geografia\Fuente Geografia"
-          TopLeft="537,59.5" />
-        <NodeLayout
-          Size="217,42"
-          Id="Package\Dimension Geografia\Columnas de linaje Geografia"
-          TopLeft="508.5,161.5" />
-        <EdgeLayout
-          Id="Package\Dimension Geografia.Paths[OLE DB Source Output]"
-          TopLeft="617,101.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Dimension Geografia\SCD Geografia"
-          TopLeft="543.5,263.5" />
-        <EdgeLayout
-          Id="Package\Dimension Geografia.Paths[Derived Column Output]"
-          TopLeft="617,203.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="765,38.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dimension Geografia\Insert Destination"
-          TopLeft="310.5,365.5" />
+          TopLeft="319.5,472.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Dimension Geografia\SCD Geografia"
+          TopLeft="552.5,370.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Dimension Geografia\OLE DB Command"
+          TopLeft="765,472.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Dimension Geografia\Columnas de linaje Geografia"
+          TopLeft="517.5,268.5" />
         <EdgeLayout
           Id="Package\Dimension Geografia.Paths[New Output]"
-          TopLeft="593.833333333333,305.5">
+          TopLeft="602.833333333333,412.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1613,13 +2270,31 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Dimension Geografia\OLE DB Command"
-          TopLeft="756,365.5" />
+        <EdgeLayout
+          Id="Package\Dimension Geografia.Paths[Derived Column Output]"
+          TopLeft="626,310.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimension Geografia.Paths[Changing Attribute Updates Output]"
-          TopLeft="640.166666666667,305.5">
+          TopLeft="649.166666666667,412.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1649,21 +2324,111 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="20.8827604166667,29.3876177658143,157.0678125,11.6630859375"
+              BoundingBox="20.8827604166665,29.3876177658143,157.0678125,11.6630859375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Dimension Geografia\Flat File Source"
+          TopLeft="323,31" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Dimension Geografia\Union All"
+          TopLeft="569,151" />
+        <EdgeLayout
+          Id="Package\Dimension Geografia.Paths[Union All Output 1]"
+          TopLeft="627.75,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.5"
+              Start="0,0"
+              End="0,68">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimension Geografia.Paths[OLE DB Source Output]"
+          TopLeft="845,80.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-215.5,70.5"
+              Start="0,0"
+              End="-215.5,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.25"
+                    Point2="0,35.25"
+                    Point3="-4,35.25" />
+                  <mssgle:LineSegment
+                    End="-211.5,35.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-211.5,35.25"
+                    Point2="-215.5,35.25"
+                    Point3="-215.5,39.25" />
+                  <mssgle:LineSegment
+                    End="-215.5,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimension Geografia.Paths[Flat File Source Output]"
+          TopLeft="398.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.166666666667,78"
+              Start="0,0"
+              End="212.166666666667,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.189233278956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.189233278956"
+                    Point2="0,46.189233278956"
+                    Point3="4,46.189233278956" />
+                  <mssgle:LineSegment
+                    End="208.166666666667,46.189233278956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.166666666667,46.189233278956"
+                    Point2="212.166666666667,46.189233278956"
+                    Point3="212.166666666667,50.189233278956" />
+                  <mssgle:LineSegment
+                    End="212.166666666667,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimension Geografia\Fuente Geografia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimension Geografia\SCD Geografia">
     <Properties>
@@ -1770,6 +2535,14 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimension Geografia\Fuente Geografia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
