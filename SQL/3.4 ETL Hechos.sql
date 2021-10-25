@@ -1,7 +1,7 @@
 USE RepuestosWebDWH
 GO
 --Script de SP para MERGE
-create PROCEDURE USP_MergeFact
+alter PROCEDURE USP_MergeFact
 as
 BEGIN
 
@@ -248,7 +248,7 @@ BEGIN
 		  ,[OrigenOrden]
 			,FechaCreacion
 			,UsuarioCreacion
-			,isnull(S.FechaModificacion, getdate())
+			,S.FechaModificacion)
 			,UsuarioModificacion
 			,ID_Batch
 			,ID_SourceSystem
