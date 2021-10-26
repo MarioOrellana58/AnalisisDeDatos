@@ -55,6 +55,10 @@
       <Name>Status Orden.dim</Name>
       <FullPath>Status Orden.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Orden Cotizacion.dim</Name>
+      <FullPath>Orden Cotizacion.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
@@ -76,7 +80,7 @@
           <ConfigurationSetting>
             <Id>Repuestos Web DWH</Id>
             <Name>Repuestos Web DWH</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=RepuestosWebDWH</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ACER-PREDATOR-H\DEVELOPER_SQL;Integrated Security=SSPI;Initial Catalog=RepuestosWebDWH</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
