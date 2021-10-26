@@ -55,6 +55,10 @@
       <Name>Status Orden.dim</Name>
       <FullPath>Status Orden.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Orden Cotizacion.dim</Name>
+      <FullPath>Orden Cotizacion.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
