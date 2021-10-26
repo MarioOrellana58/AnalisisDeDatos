@@ -80,7 +80,7 @@
           <ConfigurationSetting>
             <Id>Repuestos Web DWH</Id>
             <Name>Repuestos Web DWH</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=RepuestosWebDWH</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ACER-PREDATOR-H\DEVELOPER_SQL;Integrated Security=SSPI;Initial Catalog=RepuestosWebDWH</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
