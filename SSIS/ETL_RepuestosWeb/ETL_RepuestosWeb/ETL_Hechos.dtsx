@@ -11,8 +11,8 @@
   DTS:LocaleID="4106"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{0FF0F78F-27DE-4398-8A35-5A4723E32AF2}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{06080858-FAF5-48E6-BB93-F0E7D0FDAD70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -545,7 +545,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{61F9A04E-45FF-402C-98D0-2CC8AE4A45B7}"
-              SQLTask:SqlStatementSource="&#xA;UPDATE staging.OrdenCotizacion&#xA;SET TotalCotizacion =  OC.CantidadCotizacion * P.Precio &#xA;&#x9;&#x9;FROM staging.OrdenCotizacion OC&#xA;&#x9;&#x9;&#x9;INNER JOIN Dimension.Partes P ON (OC.ID_Parte_Cotizacion = P.ID_Parte)&#xA;WHERE IDCotizacion IS NOT NULL&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE staging.OrdenCotizacion&#xA;SET Total_Orden =  OC.CantidadOrden * P.Precio &#xA;&#x9;&#x9;FROM staging.OrdenCotizacion OC&#xA;&#x9;&#x9;&#x9;INNER JOIN Dimension.Partes P ON (OC.ID_Parte_Orden = P.ID_Parte)&#xA;WHERE ID_Orden IS NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="UPDATE staging.OrdenCotizacion&#xA;SET TotalCotizacion =  OC.CantidadCotizacion * P.Precio * IIF(C.PorcentajeDescuento IS NOT NULL, 1 - C.PorcentajeDescuento, 1)&#xA;&#x9;&#x9;FROM staging.OrdenCotizacion OC&#xA;&#x9;&#x9;&#x9;INNER JOIN Dimension.Partes P ON (OC.ID_Parte_Cotizacion = P.ID_Parte)&#xA;&#x9;&#x9;&#x9;LEFT JOIN Dimension.Descuento C ON (OC.ID_Descuento = C.ID_Descuento)&#xA;WHERE IDCotizacion IS NOT NULL&#xA;&#xA;&#xA;UPDATE staging.OrdenCotizacion&#xA;SET Total_Orden =  OC.CantidadOrden * P.Precio * IIF(C.PorcentajeDescuento IS NOT NULL, 1 - C.PorcentajeDescuento, 1)&#xA;&#x9;&#x9;FROM staging.OrdenCotizacion OC&#xA;&#x9;&#x9;&#x9;INNER JOIN Dimension.Partes P ON (OC.ID_Parte_Orden = P.ID_Parte)&#xA;&#x9;&#x9;&#x9;LEFT JOIN Dimension.Descuento C ON (OC.ID_Descuento = C.ID_Descuento)&#xA;WHERE ID_Orden IS NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5669,7 +5669,7 @@ WHERE ((O.Fecha_Orden&gt;?)
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{61F9A04E-45FF-402C-98D0-2CC8AE4A45B7}"
-              SQLTask:SqlStatementSource="UPDATE staging.OrdenCotizacion&#xA;SET OrigenOrden = CASE&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;WHEN IDCotizacion IS NOT NULL THEN 'Aseguradora'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;WHEN ID_Cliente IS NOT NULL THEN 'Cliente registrado'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ELSE 'Invitados'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;END&#xA;WHERE OrigenOrden IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="UPDATE staging.OrdenCotizacion&#xA;SET OrigenOrden = CASE&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;WHEN IDCotizacion IS NOT NULL THEN 'Aseguradora'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;WHEN ID_Cliente IS NOT NULL THEN 'Cliente registrado'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ELSE 'Invitados'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;END&#xA;WHERE OrigenOrden IS NULL&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5735,39 +5735,39 @@ WHERE ((O.Fecha_Orden&gt;?)
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Contenedor de secuencias\Actualizar Hechos"
           TopLeft="112.428575880673,488.270594959687" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Contenedor de secuencias\Añadir fecha de ejecución"
           TopLeft="91.2857183607259,106.541179344811" />
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Contenedor de secuencias\Calcular Total Cotizacion y Orden"
           TopLeft="94,396" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Contenedor de secuencias\Carga a Staging"
           TopLeft="119.857147418723,205.682357048741" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Contenedor de secuencias\Definir OrigenOrden"
           TopLeft="109.857147248424,301.917652067263" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Contenedor de secuencias\Truncar Staging"
           TopLeft="112.000004427774,18.6000016408808" />
         <EdgeLayout
@@ -5883,8 +5883,8 @@ WHERE ((O.Fecha_Orden&gt;?)
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="374.4,584.8"
-          Size="374.4,628"
+          PanelSize="374,585"
+          Size="374,628"
           Id="Package\Contenedor de secuencias"
           TopLeft="443.857145375135,50.0588243015909" />
       </GraphLayout>
