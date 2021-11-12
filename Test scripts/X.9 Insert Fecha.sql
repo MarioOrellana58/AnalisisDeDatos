@@ -1,0 +1,3 @@
+USE [RepuestosWebDWH]
+
+DECLARE @FechaMaxima DATETIME=DATEADD(YEAR,2,GETDATE())
